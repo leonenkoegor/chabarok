@@ -18,8 +18,10 @@ public class AuthSuccessHandlerImpl implements AuthenticationSuccessHandler {
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         authorities.forEach(authority -> {
             try {
-                if (authority.getAuthority().equals("COURIER")) {
-                    redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/courier");
+                if (authority.getAuthority().equals("CASHIER")) {
+                    redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/cashier");
+                } else if (authority.getAuthority().equals("COOKER")) {
+                    redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/cooker");
                 } else if (authority.getAuthority().equals("ADMIN")) {
                     redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/admin");
                 }
