@@ -1,7 +1,6 @@
 package codes.purple.chabarok.models;
 
 import lombok.Data;
-import lombok.experimental.Tolerate;
 
 import javax.persistence.*;
 
@@ -22,9 +21,5 @@ public class User {
     private String secondName;
     private String lastName;
     private Integer phoneNumber;
-
-    @Tolerate
-    public User() {
-    }
 
 }
