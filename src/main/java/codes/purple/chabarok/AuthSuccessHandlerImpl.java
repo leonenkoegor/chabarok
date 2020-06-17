@@ -20,8 +20,8 @@ public class AuthSuccessHandlerImpl implements AuthenticationSuccessHandler {
             try {
                 if (authority.getAuthority().equals("CASHIER")) {
                     redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/cashier");
-                } else if (authority.getAuthority().equals("COOKER")) {
-                    redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/cooker");
+                } else if (authority.getAuthority().equals("COOK")) {
+                    redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/cook");
                 } else if (authority.getAuthority().equals("ADMIN")) {
                     redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/admin");
                 }
