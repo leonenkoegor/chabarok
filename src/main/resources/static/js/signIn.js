@@ -1,3 +1,5 @@
 let url = window.location.href;
 
-console.log(url);
+if(url === 'http://localhost:8080/login?error'){
+
+}
