@@ -20,10 +20,11 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
+                .antMatchers("/").permitAll()
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/js/**").permitAll()
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
-                .antMatchers("/cooker/**").hasAuthority("COOKER")
+                .antMatchers("/cook/**").hasAuthority("COOK")
                 .antMatchers("/cashier/**").hasAuthority("CASHIER")
                 .anyRequest().authenticated()
                 .and()
