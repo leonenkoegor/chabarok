@@ -8,7 +8,7 @@ import codes.purple.chabarok.services.exceptions.ShortPasswordException;
 import codes.purple.chabarok.services.exceptions.ShortUsernameException;
 import codes.purple.chabarok.services.exceptions.UserAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,8 +18,8 @@ public class AdminRestController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/admin/create/user")
-    public DefaultResponse createUser(@RequestBody UserDTO userDTO) {
+    @GetMapping("/admin/create/user")
+    public DefaultResponse createUser(UserDTO userDTO) {
         try {
             userService.create(userDTO);
         } catch (ShortUsernameException e) {
