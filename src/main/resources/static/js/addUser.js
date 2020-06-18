@@ -31,8 +31,7 @@ function createUser() {
         'role':role,
         'enabled':'true'
     }
-    console.log(JSON.stringify(send));
-    let request = new Request('POST','/admin/create/user',JSON.stringify(send)+'');
+    let request = new Request('GET','/admin/create/user', send);
     request.sendRequest(function (xhr) {
         if(xhr.status ==='SUCCESS'){
             success.style.display = 'block';

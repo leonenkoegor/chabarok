@@ -17,7 +17,7 @@ for(let i=0;i<navList.length;i++){
 addUser.addEventListener('click',getAddUserPage);
 
 function getAddUserPage() {
-    let request = new Request('GET','/admin/get/fragment/addUser',[],'html');
+    let request = new Request('GET','/admin/get/fragment/addUser', {}, false);
     request.sendRequest(function (xhr) {
         const g = document.createRange().createContextualFragment(xhr);
         main.append(g);
