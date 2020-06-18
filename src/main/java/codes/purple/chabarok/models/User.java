@@ -2,6 +2,7 @@ package codes.purple.chabarok.models;
 
 import codes.purple.chabarok.dtos.UserDTO;
 import lombok.Data;
+import lombok.experimental.Tolerate;
 
 import javax.persistence.*;
 
@@ -21,7 +22,7 @@ public class User {
     private String firstName;
     private String secondName;
     private String lastName;
-    private Integer phoneNumber;
+    private Long phoneNumber;
 
     public User(UserDTO userDTO) {
         this.username = userDTO.getUsername();
@@ -32,5 +33,9 @@ public class User {
         this.secondName = userDTO.getSecondName();
         this.lastName = userDTO.getLastName();
         this.phoneNumber = userDTO.getPhoneNumber();
+    }
+
+    @Tolerate
+    public User() {
     }
 }
