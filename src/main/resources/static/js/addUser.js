@@ -1,3 +1,4 @@
+import Request from "/js/Request.js";
 let roleItems = document.getElementsByClassName('btn-light');
 console.log(roleItems);
 for (let i=0;i<roleItems.length;i++){

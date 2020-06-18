@@ -1,8 +1,9 @@
 export default class Request {
-    constructor(method, url, params = []) {
+    constructor(method, url, params = [],xhrType = null) {
         this.method = method;
         this.url = url;
         this.params = params;
+        this.xhrType = xhrType;
     }
 
     sendRequest(callback) {
@@ -19,7 +20,9 @@ export default class Request {
             xhr.open(this.method, this.url)
         }
 
-        xhr.responseType = 'json';
+        if(this.xhrType !== null){
+            xhr.responseType = 'json';
+        }
         xhr.onload = () => {
             callback(xhr.response);
         }
