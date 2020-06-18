@@ -12,6 +12,9 @@
 </head>
 <body>
 <main>
+    <div class="logo">
+
+    </div>
     <form id="signInForm" method="post" th:action="@{/login}">
         <div class="form-group">
             <label for="login">Логин</label>
@@ -21,7 +24,7 @@
             <label for="exampleInputPassword1">Пароль</label>
             <input type="password" class="form-control" id="exampleInputPassword1" name="password">
         </div>
-        <button id="btn" type="submit" class="btn btn-primary">Войти</button>
+        <button id="signInBtn" type="submit" class="btn btn-primary">Войти</button>
     </form>
 </main>
 <script th:src="@{/js/signIn.js}"></script>

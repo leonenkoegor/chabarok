@@ -8,10 +8,19 @@
 body{
     height: 100vh;
 }
+.logo{
+    width: 100%;
+    height: 100px;
+    background-image: url("/img/logo.png");
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 50%;
+}
 main{
     width: 30%;
     padding: 30px;
-    margin: 40vh auto;
+    margin: 20vh auto;
     border: 1px solid #CED4DA;
     border-radius: 10px;
 }
@@ -19,5 +28,31 @@ main{
     width: 100%;
     text-align: center;
     color: red;
-    margin: 20px 0px;
+    margin: 20px 0;
+}
+/*Отзывчивость для ширины экрана*/
+@media (max-width: 1050px) {
+   main{
+       width: 40%;
+   }
+}
+@media (max-width: 800px) {
+    main{
+        width: 50%;
+    }
+}
+@media (max-width: 650px) {
+    main{
+        width: 60%;
+    }
+}
+@media (max-width: 520px) {
+    main{
+        width: 80%;
+    }
+}
+@media (max-width: 380px) {
+    main{
+        width: 90%;
+    }
 }

@@ -1,0 +1,24 @@
+
+<form id="addUserForm">
+    <h4>Добавить пользователя</h4>
+    <div class="form-group">
+
+        <div><input type="text" placeholder="Имя" class="form-control" id="firstname" name="firstname"></div>
+        <div><input type="text" placeholder="Фамилия" class="form-control" id="secondname"  name="secondname"></div>
+        <div> <input type="text" placeholder="Отчество" class="form-control" id="lastname"  name="lastname"></div>
+        <div><input type="text" placeholder="Телефон" class="form-control" id="number"  name="number"></div>
+        <div><input type="text" placeholder="Логин" class="form-control" id="login"  name="login"></div>
+        <div><input type="text" placeholder="Пароль" class="form-control" id="password"  name="password"></div>
+        <div class="usersRole">
+            <button type="button" class="btn btn-light">Администратор</button>
+            <button type="button" class="btn btn-light">Повар</button>
+            <button type="button" class="btn btn-light">Менеджер</button>
+            <button type="button" class="btn btn-light">Кассир</button>
+        </div>
+        <div><button type="button" class="btn btn-dark">Добавить</button></div>
+        <div class="alert alert-success" role="alert">
+            Пользователь был успешно добавлен!
+        </div>
+    </div>
+</form>
+<script th:src="@{/js/addUser.js}"></script>
