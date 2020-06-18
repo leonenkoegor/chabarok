@@ -11,4 +11,9 @@ public class AdminController {
         return "admin";
     }
 
+    @GetMapping("/admin/get/fragment/addUser")
+    public String adminAddUserFragment() {
+        return "addUser";
+    }
+
 }
