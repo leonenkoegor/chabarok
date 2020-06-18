@@ -19,7 +19,7 @@
         <li>График смен</li>
         <li>Бронь</li>
         <li>Настройки</li>
-        <li><a th:href="@{/logout}">Выход</a></li>
+        <li><a href="javascript: document.logoutForm.submit()" role="menuitem">Выход</a></li>
     </nav>
 </header>
 <main>
@@ -27,6 +27,11 @@
 
     </div>
 </main>
+
+
+<form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
 
 <script th:src="@{/js/header.js}"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

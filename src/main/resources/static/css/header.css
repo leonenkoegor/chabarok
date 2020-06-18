@@ -34,3 +34,11 @@ header nav li:hover{
     color: #ffffff;
     border: 1px solid #ffffff;
 }
+nav li a{
+    text-decoration: none;
+    color: #C1BDCD;
+}
+nav li a:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
