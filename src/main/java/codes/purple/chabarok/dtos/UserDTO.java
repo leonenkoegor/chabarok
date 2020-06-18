@@ -13,6 +13,6 @@ public class UserDTO {
     private String firstName;
     private String secondName;
     private String lastName;
-    private Integer phoneNumber;
+    private Long phoneNumber;
 
 }
