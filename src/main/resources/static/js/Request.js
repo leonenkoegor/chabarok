@@ -1,5 +1,5 @@
 export default class Request {
-    constructor(method, url, params = [],xhrType = null) {
+    constructor(method, url, params,xhrType = null) {
         this.method = method;
         this.url = url;
         this.params = params;
@@ -20,14 +20,14 @@ export default class Request {
             xhr.open(this.method, this.url)
         }
 
-        if(this.xhrType !== null){
+        if(this.xhrType === null){
             xhr.responseType = 'json';
         }
         xhr.onload = () => {
             callback(xhr.response);
         }
 
-        if (this.method === 'POST') {
+        if (this.method === 'POST' && typeof this.params !== "string") {
             let body = "";
             this.params.forEach((value) => {
                 body += value + "&";
@@ -35,7 +35,7 @@ export default class Request {
             body = body.substring(0, body.length - 1);
             xhr.send(body);
         } else {
-            xhr.send();
+            xhr.send(this.params);
         }
     }
 
