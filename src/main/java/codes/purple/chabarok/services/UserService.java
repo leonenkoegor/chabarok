@@ -20,7 +20,7 @@ public class UserService {
 
     public User findByUsername(String username) throws UserNotFoundException {
         Optional<User> user = userRepository.findByUsername(username);
-        if (user.isEmpty()) throw new UserNotFoundException();
+        if (user.isPresent()) throw new UserNotFoundException();
         return user.get();
     }
 
