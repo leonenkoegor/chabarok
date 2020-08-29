@@ -16,10 +16,6 @@ public class OrderedTable {
     private Long id;
     @Temporal(TemporalType.DATE)
     private Date orderedDate;
-    @Temporal(TemporalType.TIME)
-    private Date orderedFromTime;
-    @Temporal(TemporalType.TIME)
-    private Date orderedToTime;
     private Long table;
     private Long peoples;
     private String firstName;
@@ -28,8 +24,6 @@ public class OrderedTable {
 
     public OrderedTable(OrderedTableDTO orderedTableDTO) {
         this.orderedDate = orderedTableDTO.getOrderedDate();
-        this.orderedFromTime = orderedTableDTO.getOrderedFromTime();
-        this.orderedToTime = orderedTableDTO.getOrderedToTime();
         this.table = orderedTableDTO.getTable();
         this.peoples = orderedTableDTO.getPeoples();
         this.firstName = orderedTableDTO.getFirstName();

@@ -8,8 +8,6 @@ import java.sql.Date;
 @Data
 public class OrderedTableDTO {
     private Date orderedDate;
-    private Date orderedFromTime;
-    private Date orderedToTime;
     private Long table;
     private Long peoples;
     private String firstName;
@@ -18,8 +16,6 @@ public class OrderedTableDTO {
 
     public OrderedTableDTO(OrderedTable orderedTable) {
         this.orderedDate = orderedTable.getOrderedDate();
-        this.orderedFromTime = orderedTable.getOrderedFromTime();
-        this.orderedToTime = orderedTable.getOrderedToTime();
         this.table = orderedTable.getTable();
         this.peoples = orderedTable.getPeoples();
         this.firstName = orderedTable.getFirstName();
