@@ -3,6 +3,7 @@ package codes.purple.chabarok.models;
 import codes.purple.chabarok.dtos.OrderedTableDTO;
 import lombok.Data;
 import lombok.experimental.Tolerate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,9 +16,12 @@ public class OrderedTable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date orderedDate;
     @Temporal(TemporalType.TIME)
+    @DateTimeFormat(pattern = "HH:mm")
     private Date orderedFromTime;
+    @DateTimeFormat(pattern = "HH:mm")
     @Temporal(TemporalType.TIME)
     private Date orderedToTime;
     private Long peoples;

@@ -1,4 +1,4 @@
-import Request from "./Request";
+import Request from "./Request.js";
 
 Array.prototype.addEvents = function(event){
     for (let i=0;i<this.length;i++){
@@ -15,15 +15,16 @@ let returnVal = function(el,val){
     el.value = val;
 }
 
-date.addEventListener('click',clearInput);
-guestCount.addEventListener('click',clearInput);
+//date.addEventListener('click',clearInput);
+//guestCount.addEventListener('click',clearInput);
+//
+//date.addEventListener('blur',function (event) {
+//    returnVal(event.target,'Дата');
+//})
+//guestCount.addEventListener('blur',function (event) {
+//    returnVal(event.target,'Количество гостей');
+//})
 
-date.addEventListener('blur',function (event) {
-    returnVal(event.target,'Дата');
-})
-guestCount.addEventListener('blur',function (event) {
-    returnVal(event.target,'Количество гостей');
-})
 searchTable.addEventListener('click',sendBookingRequest);
 
 function sendBookingRequest() {
