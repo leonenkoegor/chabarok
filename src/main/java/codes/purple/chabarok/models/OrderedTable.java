@@ -20,7 +20,6 @@ public class OrderedTable {
     private Date orderedFromTime;
     @Temporal(TemporalType.TIME)
     private Date orderedToTime;
-    private Long table;
     private Long peoples;
     private String firstName;
     private String lastName;
@@ -30,7 +29,6 @@ public class OrderedTable {
         this.orderedDate = orderedTableDTO.getOrderedDate();
         this.orderedFromTime = orderedTableDTO.getOrderedFromTime();
         this.orderedToTime = orderedTableDTO.getOrderedToTime();
-        this.table = orderedTableDTO.getTable();
         this.peoples = orderedTableDTO.getPeoples();
         this.firstName = orderedTableDTO.getFirstName();
         this.lastName = orderedTableDTO.getLastName();
