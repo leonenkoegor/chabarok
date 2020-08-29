@@ -1,0 +1,52 @@
+.calendar {
+    border: 1px solid #909090;
+    border-collapse: collapse;
+    font-family: 'Montserrat';
+    font-size: 16px;
+}
+/* Заголовок */
+.calendar th {
+    text-align: center;
+    width: 26px;
+    height: 20px;
+    background-color: #262A33 ;
+    color: #fff;
+    border: 1px solid #909090;
+}
+/* Заголовок праздника */
+.calendar th.holiday {
+    color: #FF0000;
+}
+/* Ячейка дня */
+.calendar td {
+    text-align: center;
+    width: 20px;
+    height: 18px;
+    padding-right: 4px;
+    border: 1px solid #909090;
+    text-align: right;
+    cursor: pointer;
+    font-size: 18px;
+}
+/* Затемненный день */
+.calendar td.grayed {
+    cursor: auto !important;
+}
+/* Выбранный день */
+.calendar td.selected {
+    background: #6DAFBF;
+    color: #FFFFFF;
+    box-shadow: 1px 1px rgba(255, 255, 255, 0.5) inset;
+}
+/* Праздничный день */
+.calendar td.holiday {
+    color: #FF0000;
+}
+/* Кнопки навигации */
+.calendar td.navigation {
+    text-align: center;
+    border: 0px none !important;
+    font-size: 17px;
+    cursor: pointer;
+    white-space: nowrap;
+}

@@ -1,0 +1,48 @@
+@font-face {font-family: "SF Pro Display"; src: url("//db.onlinewebfonts.com/t/0b51833ff62e4af8acb5fd3e2bf59e97.eot"); src: url("//db.onlinewebfonts.com/t/0b51833ff62e4af8acb5fd3e2bf59e97.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0b51833ff62e4af8acb5fd3e2bf59e97.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0b51833ff62e4af8acb5fd3e2bf59e97.woff") format("woff"), url("//db.onlinewebfonts.com/t/0b51833ff62e4af8acb5fd3e2bf59e97.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0b51833ff62e4af8acb5fd3e2bf59e97.svg#SF Pro Display") format("svg"); }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h2{
+    padding-bottom: 90px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+p{
+    font-weight: 100;
+}
+a{
+    color:white;
+    text-decoration: none;
+    outline: none;
+}
+html{
+    max-width: 1920px;
+    position: relative;
+    color: white;
+    font-family: 'SF Pro Display';
+    background-color: rgba(15,15,15,1);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 5000px;
+}
+html:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15,15,15,.7);
+    z-index: -1;
+}
+.header{
+    width: 100%;
+}
+.container{
+    margin: 0px auto;
+    max-width: 1640px;
+    width: 85%;
+}

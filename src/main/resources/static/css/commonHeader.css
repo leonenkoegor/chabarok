@@ -1,0 +1,58 @@
+.pre-header {
+    width: 100%;
+    height: 39px;
+    background-color: #263333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pre-header div {
+    margin: 0 10%;
+}
+
+.pre-header div span {
+    font-size: 16px;
+    padding: 0 25px;
+    text-transform: uppercase;
+}
+
+.location {
+    position: relative;
+}
+
+.pre-header div span img {
+    position: absolute;
+    left: 2px;
+    padding-right: 7px;
+}
+
+.header {
+    height: 130px;
+}
+
+.nav-container {
+    height: 70px;
+    margin: 25px auto;
+}
+
+.logo {
+    width: 130px;
+    height: 70px;
+    background-image: url("/img/logomin.png");
+    background-repeat: no-repeat;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-menu {
+    width: 60%;
+    font-size: 24px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

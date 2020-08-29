@@ -1,0 +1,272 @@
+/*Стили для всплывающего сообшения гугл карты*/
+html{
+    background-image: url("/img/main-background.png");
+}
+#mapToastHeader{
+    color: black;
+}
+#mapToastDesc{
+    color: #1C1C1C;
+}
+/*---------------------------------------------*/
+
+/*------main---------*/
+.booking{
+    height: 640px;
+    border-bottom: 3px solid white;
+}
+.bigLogo{
+    margin: 140px auto;
+    width: 30%;
+    height: 306px;
+    background-repeat: no-repeat;
+    background-image: url("/img/logomax.png");
+    background-size: contain;
+}
+.booking-btn{
+    margin: 0 auto;
+    width: min-content;
+    padding: 28px 64px;
+    border: 2px solid white;
+    border-radius: 15px;
+    font-size: 22px;
+}
+/*Наша история*/
+h2{
+    font-size: 54px;
+    font-family: 'Montserrat', sans-serif;
+}
+.story {
+    height: 977px;
+    padding-top: 160px;
+}
+.story-content p{
+
+    padding-left: 80px;
+    font-size: 24px;
+    width: 630px;
+    border-left: 2px solid white;
+
+}
+/*Кусочек с бронирование столика*
+ */
+.booking-peace{
+
+    width: 100%;
+    margin: 0;
+    height: 1180px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-top: 3px solid white;
+}
+.elipse{
+    position: absolute;
+    width: 108px;
+    height: 108px;
+    background-color: white;
+    border-radius: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -54px;
+}
+.elipse .arrow{
+    margin: 40px auto;
+    width: 25px;
+    height: 25px;
+    border-bottom: 7px solid black;
+    border-left:7px solid black;
+    transform: rotate(-45deg);
+}
+.left{
+    padding-top: 295px;
+    padding-left: 8%;
+}
+.right{
+    height: 960px;
+    width: 50%;
+    background-color: #263333;
+}
+.booking-content{
+    font-size: 24px;
+
+    width: 550px;
+}
+/*Кусочек меню*/
+.menu-peace{
+    height: 1650px;
+}
+.menuLinkBtn{
+    padding: 22px 50px;
+    width: max-content;
+    font-size: 22px;
+    border: 2px solid white;
+    border-radius: 10px;
+    max-width: 283px;
+    margin: 160px auto;
+}
+
+.location-container{
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.address span span{
+    padding-left: 8px;
+}
+.address,.phones{
+    width: max-content;
+    margin: 40px auto;
+}
+
+.phones>span{
+    padding: 0 25px;
+}
+.address{
+    border: 7px solid #10293A;
+}
+#map{
+    width: 100%;
+    height: 670px;
+}
+/********************/
+.events{
+    padding-top: 330px;
+    padding-bottom: 400px;
+    text-align: center;
+}
+.event-content{
+    width: 33.3333%;
+}
+.photos-container{
+    width: 100%;
+    display: flex;
+}
+.photo{
+    height: 480px;
+}
+.photo:not(.center){
+    margin-top: 25px;
+}
+.start{
+    background-image: url("/img/start.png");
+    background-repeat: no-repeat;
+}
+.center{
+    height: 530px;
+    background-image: url("/img/center.png");
+    background-repeat: no-repeat;
+}
+.end{
+    background-image: url("/img/end.png");
+    background-repeat: no-repeat;
+}
+
+.photo-desc{
+    width: max-content;
+    text-align: start;
+    margin: 50px auto;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 24px;
+}
+/***************/
+.album{
+    width: 100%;
+    background-image: url("/img/album.png");
+    height: 1130px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 260px;
+    position: relative;
+}
+.album:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15,15,15,.7);
+    z-index: 1;
+}
+.album-container{
+    z-index: 2;
+    position: absolute;
+    right: 20%;
+    bottom: 18%;
+}
+.album p{
+    padding-left: 80px;
+    font-size: 24px;
+    width: 630px;
+    border-left: 2px solid white;
+}
+/*****************/
+
+/*Календарь и бронирование*/
+table {
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+
+td,
+th {
+    font-size: 22px;
+    border: 3px solid white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+td{
+    background-color: #262A33;
+}
+
+th {
+    color: white;
+    font-weight: bold;
+    background-color: #000;
+    border-radius: 10px;
+}
+#booking-container{
+    display: flex;
+    width: 85%;
+    margin: 250px auto;
+
+    justify-content: space-between;
+}
+#searchTable{
+    margin: -50px auto;
+    width: max-content;
+    padding: 22px 80px;
+    font-size: 22px;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.right p{
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #515B5B;
+    padding-left: 10px;
+    padding-bottom: 60px;
+}
+.right input{
+    text-decoration: none;
+    outline: none;
+    border: 2px solid white;
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+    border-radius: 10px;
+    padding-left: 20px;
+    height: 70px;
+    background-color: rgba(0,0,0,0);
+}
+#booking-container>div{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

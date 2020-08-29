@@ -1,0 +1,54 @@
+.card-container{
+
+    width: 100%;
+    height: 1150px;
+    display: flex;
+}
+.card{
+    width: 33.33%;
+    height: 1150px;
+    background-color: #000000;
+}
+.card2{
+    background-color: #1C1C1C;
+}
+.card-img{
+    background-image: url("images/card.png");
+    height: 550px;
+    background-repeat: no-repeat;
+}
+.card h3{
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 44px;
+    font-size: 34px;
+}
+/*описание блюда и его параметы*/
+.foodDescription{
+    width: 90%;
+    font-size: 29px;
+    padding-left: 44px;
+    padding-top: 60px;
+    padding-bottom: 52px;
+}
+.foodParamContainer{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 44px;
+    font-size: 23px;
+    width: 90%;
+}
+/*Значение веса*/
+.weight{
+    color: #2E2E2E;
+    font-weight: 100;
+}
+/*---------Кнопка добавить в корзину---------*/
+.addToCartBtn{
+    width: 52%;
+    font-size: 23px;
+    text-align: center;
+    padding: 22px 50px;
+    border-radius: 10px;
+    background-color: #E2002B;
+    margin: 110px auto;
+}

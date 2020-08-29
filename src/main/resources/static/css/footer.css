@@ -1,0 +1,37 @@
+.footer{
+    padding-top: 180px;
+    height: 980px;
+    border-top: 3px solid #83071E;
+}
+footer p{
+    padding-bottom: 40px;
+}
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    height: 680px;
+}
+.footer-container .logo{
+    width: 160px;
+    height: 200px;
+    background-size: contain;
+}
+.footer-container h4{
+    font-size: 32px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    padding-top: 20px;
+}
+
+.footer-contacts,.schedule {
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.time{
+    flex-grow: 0.8;
+}
