@@ -3,7 +3,7 @@ package codes.purple.chabarok.dtos;
 import codes.purple.chabarok.models.OrderedTable;
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
 
 @Data
 public class OrderedTableDTO {

@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.experimental.Tolerate;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Table(name = "orderedTables")
