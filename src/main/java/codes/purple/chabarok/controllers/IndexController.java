@@ -11,4 +11,33 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/menu")
+    public String menuPage() {
+        return "menu";
+    }
+
+    @GetMapping("/booking")
+    public String bookingPage() {
+        return "booking";
+    }
+
+    @GetMapping("/burak")
+    public String burakPage() {
+        return "burak";
+    }
+
+    @GetMapping("/cart")
+    public String cartPage() {
+        return "cart";
+    }
+
+    @GetMapping("/deliver")
+    public String deliverPage() {
+        return "deliver";
+    }
+
+    @GetMapping("/contacts")
+    public String contactsPage() {
+        return "contacts";
+    }
 }
