@@ -70,15 +70,15 @@
         <div class="right">
             <div id="booking-container">
                 <div>
-                    <input value="Фамилия и имя" id="name" type="text">
+                    <input value="Фамилия и имя" id="firstNameAndSecondName" type="text">
                     <p>*Выберите дату вашего празднования</p>
-                    <input value="Номре телефона" id="phoneNumber" type="text">
+                    <input value="Номер телефона" id="phoneNumber" type="text">
                     <p>*Выберите дату вашего празднования</p>
                     <input value="Дата" id="date" type="text">
                     <p>*Выберите дату вашего празднования</p>
                     <input value="Количество гостей" id="guestsCount" type="text">
                     <p>*Выберите количество ваших гостей</p>
-                    <p>Время с <input style="border: none;font-size: 22px" type="time" value="00:00"> до <input value="00:00" style="border: none;font-size: 22px" type="time" ></p>
+                    <p>Время с <input style="border: none;font-size: 22px" type="time" value="00:00" id="fromTime"> до <input id="toTime" value="00:00" style="border: none;font-size: 22px" type="time" ></p>
                     <p>*Выберите количество ваших гостей</p>
                 </div>
                 <div class="calendarContainer">
@@ -144,7 +144,7 @@
         <div id="map">
 
         </div>
-        <div class="address"><span><img src="images/ic_place_24px.png" alt="location"><span>Гомель, Черниговское шоссе 9-й км.</span></span>
+        <div class="address"><span><img src="/img/ic_place_24px.png" alt="location"><span>Гомель, Черниговское шоссе 9-й км.</span></span>
         </div>
         <div class="phones">
             <span>+ 375 232 37 84 00</span>
@@ -205,8 +205,8 @@
     </div>
 </footer>
 <script th:src="@{/js/map.js}" ></script>
-<script th:src="@{booking.js}"></script>
-<script th:src="@{calendar.js}"></script>
+<script th:src="@{/js/booking.js}"></script>
+<script th:src="@{/js/calendar.js}"></script>
 <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwRwmB9UWvRy9nmZiUerlAZpS23pOD-gU&callback=initMap&libraries=&v=weekly"
         async defer></script>
