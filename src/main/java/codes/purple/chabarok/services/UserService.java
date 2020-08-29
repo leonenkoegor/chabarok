@@ -19,9 +19,7 @@ public class UserService {
     private UserRepository userRepository;
 
     public User findByUsername(String username) throws UserNotFoundException {
-        Optional<User> user = userRepository.findByUsername(username);
-        if (user.isPresent()) throw new UserNotFoundException();
-        return user.get();
+        return userRepository.findByUsername(username).orElseThrow(UserNotFoundException::new);
     }
 
     public void create(UserDTO userDTO) throws ShortUsernameException, ShortPasswordException, UserAlreadyExistsException {

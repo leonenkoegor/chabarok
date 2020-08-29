@@ -11,8 +11,7 @@ public class OrderedTableDTO {
     private Date orderedFromTime;
     private Date orderedToTime;
     private Long peoples;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String phoneNumber;
 
     public OrderedTableDTO(OrderedTable orderedTable) {
@@ -20,8 +19,7 @@ public class OrderedTableDTO {
         this.orderedFromTime = orderedTable.getOrderedFromTime();
         this.orderedToTime = orderedTable.getOrderedToTime();
         this.peoples = orderedTable.getPeoples();
-        this.firstName = orderedTable.getFirstName();
-        this.lastName = orderedTable.getLastName();
+        this.name = orderedTable.getName();
         this.phoneNumber = orderedTable.getPhoneNumber();
     }
 }
