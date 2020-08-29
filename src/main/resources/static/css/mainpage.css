@@ -32,10 +32,7 @@ html{
     font-size: 22px;
 }
 /*Наша история*/
-h2{
-    font-size: 54px;
-    font-family: 'Montserrat', sans-serif;
-}
+
 .story {
     height: 977px;
     padding-top: 160px;

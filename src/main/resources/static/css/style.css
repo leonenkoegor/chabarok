@@ -6,6 +6,8 @@
     box-sizing: border-box;
 }
 h2{
+    font-size: 54px;
+    font-family: 'Montserrat', sans-serif;
     padding-bottom: 90px;
     text-transform: uppercase;
     font-weight: 900;
@@ -26,7 +28,6 @@ html{
     background-color: rgba(15,15,15,1);
     background-repeat: no-repeat;
     background-size: contain;
-    height: 5000px;
 }
 html:after {
     content: '';
