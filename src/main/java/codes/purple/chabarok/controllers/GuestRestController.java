@@ -26,4 +26,9 @@ public class GuestRestController {
         }
         return orderedTableDTOS;
     }
+
+    @GetMapping("/ordered/table/add")
+    public void addOrderedTable(OrderedTableDTO orderedTableDTO) {
+        orderedTableService.addOrderedTable(orderedTableDTO);
+    }
 }
