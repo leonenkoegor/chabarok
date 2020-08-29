@@ -32,7 +32,7 @@ function sendBookingRequest() {
         'orderedFromTime':document.getElementById('fromTime').value,
         'orderedToTime':document.getElementById('toTime').value,
         'peoples':document.getElementById('guestsCount').value,
-        'firstNameAndSecondName':document.getElementById('firstNameAndSecondName').value,
+        'name':document.getElementById('firstNameAndSecondName').value,
         'phoneNumber':document.getElementById('phoneNumber').value,
     }
     let request = new Request('GET','/ordered/table/add', send);
