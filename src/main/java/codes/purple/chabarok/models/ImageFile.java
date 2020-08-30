@@ -18,6 +18,5 @@ public class ImageFile {
     private String name;
     private String type;
     @Lob
-    @Column(length = 10000)
     private byte[] data;
 }

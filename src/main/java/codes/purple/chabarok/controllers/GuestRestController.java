@@ -2,14 +2,12 @@ package codes.purple.chabarok.controllers;
 
 import codes.purple.chabarok.controllers.responses.DataResponse;
 import codes.purple.chabarok.controllers.responses.Status;
-import codes.purple.chabarok.dtos.ImageFileDTO;
 import codes.purple.chabarok.dtos.OrderedTableDTO;
 import codes.purple.chabarok.models.OrderedTable;
 import codes.purple.chabarok.services.CategoryService;
 import codes.purple.chabarok.services.DishService;
 import codes.purple.chabarok.services.OrderedTableService;
 import codes.purple.chabarok.services.exceptions.CategoryNotFoundException;
-import codes.purple.chabarok.services.exceptions.DishNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
