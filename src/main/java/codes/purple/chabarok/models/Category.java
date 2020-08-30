@@ -27,7 +27,7 @@ public class Category {
     private Set<Dish> dishes;
 
     public Category(CategoryDTO categoryDTO) {
-        this.name = categoryDTO.getMainCategoryName();
+        this.mainCategoryName = categoryDTO.getMainCategoryName();
         this.name = categoryDTO.getName();
         this.dishes = categoryDTO.getDishes();
     }
