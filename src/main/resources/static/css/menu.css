@@ -31,6 +31,7 @@ html{
     display: flex;
     list-style-type: none;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .subMenu li{
     padding-bottom: 20px;

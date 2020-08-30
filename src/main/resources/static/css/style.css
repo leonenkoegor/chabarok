@@ -39,6 +39,9 @@ html:after {
     background: rgba(15,15,15,.7);
     z-index: -1;
 }
+body{
+    margin: 0 auto;
+}
 .header{
     width: 100%;
 }

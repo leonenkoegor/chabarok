@@ -131,7 +131,7 @@ calendar.drawCalendar(
 
 let arr = document.getElementsByClassName('days');
 for(let i=0;i<arr.length;i++){
-    console.log(arr[i]);
+
     arr[i].addEventListener('click',function (event) {
         dateTo.value ='';
     })

@@ -15,9 +15,9 @@ let returnVal = function(el,val){
     el.value = val;
 }
 
-//date.addEventListener('click',clearInput);
-//guestCount.addEventListener('click',clearInput);
-//
+date.addEventListener('click',clearInput);
+guestCount.addEventListener('click',clearInput);
+
 //date.addEventListener('blur',function (event) {
 //    returnVal(event.target,'Дата');
 //})

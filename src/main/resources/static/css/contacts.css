@@ -1,0 +1,15 @@
+html{
+    background-image: url("/img/contactsBackground.png");
+}
+
+.contactsPage{
+    height: 1540px;
+    padding-top: 230px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#map{
+    width: 50%;
+    height: 100%;
+}
