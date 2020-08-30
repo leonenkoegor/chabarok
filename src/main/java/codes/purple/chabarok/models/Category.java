@@ -15,6 +15,7 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String mainCategoryName;
     private String name;
     @ManyToMany
     @JoinTable(
@@ -26,6 +27,7 @@ public class Category {
     private Set<Dish> dishes;
 
     public Category(CategoryDTO categoryDTO) {
+        this.mainCategoryName = categoryDTO.getMainCategoryName();
         this.name = categoryDTO.getName();
         this.dishes = categoryDTO.getDishes();
     }

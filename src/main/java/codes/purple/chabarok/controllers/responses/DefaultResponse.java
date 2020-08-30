@@ -6,8 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class DefaultResponse {
-
     protected Status status;
     private String message;
-
 }

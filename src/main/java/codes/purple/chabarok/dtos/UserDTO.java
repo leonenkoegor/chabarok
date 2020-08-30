@@ -5,7 +5,6 @@ import lombok.Data;
 
 @Data
 public class UserDTO {
-
     private String username;
     private String password;
     private Boolean enabled;
@@ -14,5 +13,4 @@ public class UserDTO {
     private String secondName;
     private String lastName;
     private Long phoneNumber;
-
 }

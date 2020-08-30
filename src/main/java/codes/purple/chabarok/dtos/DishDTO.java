@@ -19,7 +19,6 @@ public class DishDTO {
         this.cost = dish.getCost();
     }
 
-    @Tolerate
     public DishDTO() {
     }
 }
