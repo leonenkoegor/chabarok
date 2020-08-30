@@ -1,6 +1,7 @@
 package codes.purple.chabarok.models;
 
 import codes.purple.chabarok.dtos.CategoryDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.experimental.Tolerate;
 
@@ -21,6 +22,7 @@ public class Category {
             joinColumns = @JoinColumn(name = "categoryId"),
             inverseJoinColumns = @JoinColumn(name = "dishId")
     )
+    @JsonIgnore
     private Set<Dish> dishes;
 
     public Category(CategoryDTO categoryDTO) {
