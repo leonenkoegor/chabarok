@@ -25,6 +25,10 @@ public class CategoryService {
         return categoryRepository.findByName(name).orElseThrow(CategoryNotFoundException::new);
     }
 
+    public Category findById(Long id) throws CategoryNotFoundException {
+        return categoryRepository.findById(id).orElseThrow(CategoryNotFoundException::new);
+    }
+
     public void createCategory(CategoryDTO categoryDTO) throws CategoryAlreadyExistsException {
         try {
             findByName(categoryDTO.getName());
