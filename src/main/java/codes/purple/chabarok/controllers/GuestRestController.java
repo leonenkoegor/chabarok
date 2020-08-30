@@ -1,7 +1,10 @@
 package codes.purple.chabarok.controllers;
 
+import codes.purple.chabarok.controllers.responses.DataResponse;
+import codes.purple.chabarok.controllers.responses.Status;
 import codes.purple.chabarok.dtos.OrderedTableDTO;
 import codes.purple.chabarok.models.OrderedTable;
+import codes.purple.chabarok.services.CategoryService;
 import codes.purple.chabarok.services.OrderedTableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +20,9 @@ public class GuestRestController {
     @Autowired
     private OrderedTableService orderedTableService;
 
+    @Autowired
+    private CategoryService categoryService;
+
     @GetMapping("/ordered/tables/get")
     public List<OrderedTableDTO> getOrderedTables(@RequestParam Date date) {
         List<OrderedTableDTO> orderedTableDTOS = new LinkedList<>();
@@ -30,5 +36,10 @@ public class GuestRestController {
     @GetMapping("/ordered/table/add")
     public void addOrderedTable(OrderedTableDTO orderedTableDTO) {
         orderedTableService.addOrderedTable(orderedTableDTO);
+    }
+
+    @GetMapping("/menu/categories/get")
+    public DataResponse getAllCategories() {
+        return new DataResponse(Status.SUCCESS, categoryService.getAllCategories());
     }
 }

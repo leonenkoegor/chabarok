@@ -2,8 +2,13 @@ package codes.purple.chabarok.controllers.admin;
 
 import codes.purple.chabarok.controllers.responses.DefaultResponse;
 import codes.purple.chabarok.controllers.responses.Status;
+import codes.purple.chabarok.dtos.CategoryDTO;
+import codes.purple.chabarok.dtos.DishDTO;
 import codes.purple.chabarok.dtos.UserDTO;
+import codes.purple.chabarok.services.CategoryService;
+import codes.purple.chabarok.services.DishService;
 import codes.purple.chabarok.services.UserService;
+import codes.purple.chabarok.services.exceptions.CategoryAlreadyExistsException;
 import codes.purple.chabarok.services.exceptions.ShortPasswordException;
 import codes.purple.chabarok.services.exceptions.ShortUsernameException;
 import codes.purple.chabarok.services.exceptions.UserAlreadyExistsException;
@@ -16,6 +21,12 @@ public class AdminRestController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private CategoryService categoryService;
+
+    @Autowired
+    private DishService dishService;
 
     @GetMapping("/admin/create/user")
     public DefaultResponse createUser(UserDTO userDTO) {
@@ -32,4 +43,19 @@ public class AdminRestController {
         return new DefaultResponse(Status.SUCCESS, "user created");
     }
 
+    @GetMapping("/admin/menu/category/add")
+    public DefaultResponse addCategory(CategoryDTO categoryDTO) {
+        try {
+            categoryService.createCategory(categoryDTO);
+            return new DefaultResponse(Status.SUCCESS, "Category created!");
+        } catch (CategoryAlreadyExistsException e) {
+            return new DefaultResponse(Status.FAIL, "Category already exists!");
+        }
+    }
+
+    @GetMapping("/admin/menu/dish/add")
+    public DefaultResponse addCategory(DishDTO dishDTO) {
+        dishService.addDish(dishDTO);
+        return new DefaultResponse(Status.SUCCESS, "Dish created!");
+    }
 }

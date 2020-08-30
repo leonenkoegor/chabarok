@@ -16,15 +16,19 @@ public class Dish {
     private Long id;
     private String name;
     private String description;
+    private Double weight;
+    private Double cost;
     @ManyToMany(mappedBy = "dishes")
     private Set<Category> categories;
     @OneToOne
     @JoinColumn(name = "imageId", referencedColumnName = "id")
-    private ImageFile image = new ImageFile();
-    
+    private ImageFile image;
+
     public Dish(DishDTO dishDTO) {
         this.name = dishDTO.getName();
         this.description = dishDTO.getDescription();
+        this.weight = dishDTO.getWeight();
+        this.cost = dishDTO.getCost();
     }
 
     @Tolerate

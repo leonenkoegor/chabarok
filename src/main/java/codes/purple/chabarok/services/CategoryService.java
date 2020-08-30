@@ -10,10 +10,16 @@ import codes.purple.chabarok.services.exceptions.CategoryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
+
+    public List<Category> getAllCategories() {
+        return categoryRepository.findAll();
+    }
 
     public Category findByName(String name) throws CategoryNotFoundException {
         return categoryRepository.findByName(name).orElseThrow(CategoryNotFoundException::new);

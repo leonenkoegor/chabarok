@@ -16,4 +16,7 @@ public class CategoryDTO {
         this.name = category.getName();
         this.dishes = category.getDishes();
     }
+
+    public CategoryDTO() {
+    }
 }

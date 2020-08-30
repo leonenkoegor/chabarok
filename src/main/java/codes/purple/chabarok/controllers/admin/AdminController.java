@@ -11,6 +11,11 @@ public class AdminController {
         return "admin";
     }
 
+    @GetMapping("/admin/menu")
+    public String adminMenuPage() {
+        return "admin-menu";
+    }
+
     @GetMapping("/admin/get/fragment/addUser")
     public String adminAddUserFragment() {
         return "addUser";
