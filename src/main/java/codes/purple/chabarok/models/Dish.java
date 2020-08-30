@@ -1,6 +1,7 @@
 package codes.purple.chabarok.models;
 
 import codes.purple.chabarok.dtos.DishDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.experimental.Tolerate;
 
@@ -19,9 +20,11 @@ public class Dish {
     private Double weight;
     private Double cost;
     @ManyToMany(mappedBy = "dishes")
+    @JsonIgnore
     private Set<Category> categories;
     @OneToOne
     @JoinColumn(name = "imageId", referencedColumnName = "id")
+    @JsonIgnore
     private ImageFile image;
 
     public Dish(DishDTO dishDTO) {
