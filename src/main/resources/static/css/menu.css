@@ -1,0 +1,147 @@
+html{
+    background-image: url("/img/IMG_3484.png");
+}
+.menu{
+    padding-top: 160px;
+    margin-bottom: 160px;
+    width:100%;
+    height:950px;
+    position: relative;
+}
+.menuBlock{
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerContainer p{
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-size: 24px;
+}
+.subMenuContainer{
+    padding-top: 50px;
+    width: 60%;
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    display: flex;
+    justify-content: space-between;
+}
+.subMenu{
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+}
+.subMenu li{
+    padding-bottom: 20px;
+}
+
+/*********/
+table {
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+
+td,
+th {
+    font-size: 22px;
+    border: 3px solid white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+td{
+    background-color: #262A33;
+}
+
+th {
+    color: white;
+    font-weight: bold;
+    background-color: #000;
+    border-radius: 10px;
+}
+.booking-peace{
+
+    width: 100%;
+    margin: 0;
+    height: 1180px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.elipse{
+    position: absolute;
+    width: 108px;
+    height: 108px;
+    background-color: white;
+    border-radius: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -54px;
+}
+.elipse .arrow{
+    margin: 40px auto;
+    width: 25px;
+    height: 25px;
+    border-bottom: 7px solid black;
+    border-left:7px solid black;
+    transform: rotate(-45deg);
+}
+.left{
+    padding-top: 295px;
+    padding-left: 8%;
+}
+.right{
+    height: 960px;
+    width: 50%;
+    background-color: #263333;
+}
+.booking-content{
+    font-size: 24px;
+
+    width: 550px;
+}
+#booking-container{
+    display: flex;
+    width: 85%;
+    margin: 250px auto;
+
+    justify-content: space-between;
+}
+#searchTable{
+    margin: -50px auto;
+    width: max-content;
+    padding: 22px 80px;
+    font-size: 22px;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.right p{
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #515B5B;
+    padding-left: 10px;
+    padding-bottom: 60px;
+}
+.right input{
+    text-decoration: none;
+    outline: none;
+    border: 2px solid white;
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+    border-radius: 10px;
+    padding-left: 20px;
+    height: 70px;
+    background-color: rgba(0,0,0,0);
+}
+#booking-container>div{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
