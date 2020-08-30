@@ -61,7 +61,7 @@ public class GuestRestController {
         }
     }
 
-    @GetMapping("/order/dishes/get")
+    @GetMapping("/cart/dishes/get")
     public DataResponse getDishes(@RequestParam List<Long> dishes) {
         List<Dish> dishesList = new LinkedList<>();
         for(Long dish: dishes) {
