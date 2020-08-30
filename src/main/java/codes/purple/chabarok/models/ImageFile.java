@@ -17,6 +17,7 @@ public class ImageFile {
     private Dish dish;
     private String name;
     private String type;
+    @Lob
     @Column(length = 10000)
     private byte[] data;
 }
