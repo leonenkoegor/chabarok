@@ -33,7 +33,7 @@
         </div>
         <div class="card" style="margin: 0;padding: 20px;">
             <form class="d-flex flex-column justify-content-center align-items-center justify-content-xl-center align-items-xl-center" action="/admin/menu/dish/add" method="post" enctype="multipart/form-data">
-                <h4 class="text-center">Добавить блюдо</h4><input class="form-control" type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"><select  class="custom-select" name="categoryId" id="categoryId" style="margin: 6px;"></select><input class="form-control"
+                <h4 class="text-center">Добавить блюдо</h4><input class="form-control" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><select  class="custom-select" name="categoryId" id="categoryId" style="margin: 6px;"></select><input class="form-control"
                     type="text" placeholder="Название" name="name" style="margin: 6px;"><input class="form-control" type="text" placeholder="Описание" name="description" style="margin: 6px;"><input class="form-control" type="text" placeholder="Вес" name="weight"
                     style="margin: 6px;"><input class="form-control" type="text" placeholder="Стоимость" name="cost" style="margin: 6px;">
                 <div class="border rounded d-flex d-md-flex flex-column justify-content-md-center align-items-md-center" style="margin: 6px;padding: 6px;background-color: #ced4da;"><span>Фото</span><input type="file" name="image"></div><button class="btn btn-primary d-md-flex justify-content-md-start align-items-md-start" type="submit" style="margin: 6px;">Добавить</button></form>
