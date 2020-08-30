@@ -31,7 +31,7 @@ getCategories.sendRequest(function (xhr) {
 
                         card.setAttribute('subId',foodList[i]["id"]);
                         card.innerHTML = `
-                        <div class="card-img"></div>
+                        <div class="card-img" style="background-image: url("/menu/dishes/image/get?dishId=${foodList[i]["id"]}")"></div>
                 <h3>${foodList[i]["name"]}
                 </h3>
                 <p class="foodDescription">${foodList[i]["description"]}</p>
