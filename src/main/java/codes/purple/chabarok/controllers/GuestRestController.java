@@ -18,12 +18,14 @@ import java.util.List;
 
 @RestController
 public class GuestRestController {
+
     @Autowired
     private OrderedTableService orderedTableService;
 
     @Autowired
     private CategoryService categoryService;
 
+    //TODO rewrite getOrderedTables
     @GetMapping("/ordered/tables/get")
     public List<OrderedTableDTO> getOrderedTables(@RequestParam Date date) {
         List<OrderedTableDTO> orderedTableDTOS = new LinkedList<>();

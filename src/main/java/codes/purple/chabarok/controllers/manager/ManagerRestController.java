@@ -1,5 +1,7 @@
 package codes.purple.chabarok.controllers.manager;
 
+import codes.purple.chabarok.controllers.responses.DataResponse;
+import codes.purple.chabarok.controllers.responses.Status;
 import codes.purple.chabarok.dtos.OrderedTableDTO;
 import codes.purple.chabarok.models.OrderedTable;
 import codes.purple.chabarok.services.OrderedTableService;
@@ -9,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Date;
-import java.util.List;
 
 @RestController
 public class ManagerRestController {
@@ -17,8 +18,8 @@ public class ManagerRestController {
     private OrderedTableService orderedTableService;
 
     @GetMapping("/manager/ordered/tables/get")
-    public List<OrderedTable> getOrderedTables(@RequestParam Date date) {
-        return orderedTableService.getByDate(date);
+    public DataResponse getOrderedTables(@RequestParam Date date) {
+        return new DataResponse(Status.SUCCESS, "Ordered tables!", orderedTableService.getByDate(date));
     }
 
     @GetMapping("/manager/ordered/table/delete")
