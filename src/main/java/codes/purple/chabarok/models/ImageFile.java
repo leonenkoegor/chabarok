@@ -1,13 +1,14 @@
 package codes.purple.chabarok.models;
 
 import lombok.Data;
-import lombok.experimental.Tolerate;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "images")
 @Data
+@EqualsAndHashCode(exclude = {"dish", "id"})
 public class ImageFile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
