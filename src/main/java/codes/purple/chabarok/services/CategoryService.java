@@ -42,9 +42,9 @@ public class CategoryService {
         categoryRepository.deleteByName(name);
     }
 
-    public void addDishToCategory(Dish dish, String category) throws CantAddDishToCategoryException {
+    public void addDishToCategory(Dish dish, Long categoryId) throws CantAddDishToCategoryException {
         try {
-            Category categoryEntity = findByName(category);
+            Category categoryEntity = findById(categoryId);
             categoryEntity.getDishes().add(dish);
             categoryRepository.save(categoryEntity);
         } catch (CategoryNotFoundException e) {
