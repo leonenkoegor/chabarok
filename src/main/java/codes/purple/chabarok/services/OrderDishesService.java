@@ -17,11 +17,11 @@ public class OrderDishesService {
     @Autowired
     private OrderDishesRepository orderDishesRepository;
 
-    private List<OrderDishes> findAll() {
+    public List<OrderDishes> findAll() {
         return orderDishesRepository.findAll();
     }
 
-    private List<OrderDishes> findAllByDate(Date date) {
+    public List<OrderDishes> findAllByDate(Date date) {
         return orderDishesRepository.findAllByDate(date);
     }
 

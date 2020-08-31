@@ -7,10 +7,7 @@ import codes.purple.chabarok.dtos.CategoryDTO;
 import codes.purple.chabarok.dtos.DishDTO;
 import codes.purple.chabarok.dtos.UserDTO;
 import codes.purple.chabarok.models.Dish;
-import codes.purple.chabarok.services.CategoryService;
-import codes.purple.chabarok.services.DishService;
-import codes.purple.chabarok.services.OrderedTableService;
-import codes.purple.chabarok.services.UserService;
+import codes.purple.chabarok.services.*;
 import codes.purple.chabarok.services.exceptions.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -34,6 +31,9 @@ public class AdminRestController {
 
     @Autowired
     private OrderedTableService orderedTableService;
+
+    @Autowired
+    private OrderDishesService orderDishesService;
 
     @GetMapping("/admin/create/user")
     public DefaultResponse createUser(UserDTO userDTO) {
@@ -79,5 +79,10 @@ public class AdminRestController {
         } catch (CantAddDishToCategoryException e) {
             return new DefaultResponse(Status.FAIL, "Cant add dish to category");
         }
+    }
+
+    @GetMapping("/admin/orders/get")
+    public DataResponse getOrders(@RequestParam @DateTimeFormat(pattern = "dd/MM/yyyy") Date date) {
+        return new DataResponse(Status.SUCCESS, "Orders by date", orderDishesService.findAllByDate(date));
     }
 }
