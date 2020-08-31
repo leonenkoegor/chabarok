@@ -2,8 +2,8 @@ package codes.purple.chabarok.controllers;
 
 import codes.purple.chabarok.controllers.responses.DataResponse;
 import codes.purple.chabarok.controllers.responses.Status;
-import codes.purple.chabarok.dtos.ImageFileDTO;
 import codes.purple.chabarok.dtos.OrderedTableDTO;
+import codes.purple.chabarok.models.Dish;
 import codes.purple.chabarok.models.OrderedTable;
 import codes.purple.chabarok.services.CategoryService;
 import codes.purple.chabarok.services.DishService;
@@ -59,5 +59,18 @@ public class GuestRestController {
         } catch (CategoryNotFoundException e) {
             return new DataResponse(Status.FAIL, "Category not found!", null);
         }
+    }
+
+    @GetMapping("/cart/dishes/get")
+    public DataResponse getDishes(@RequestParam List<Long> dishes) {
+        List<Dish> dishesList = new LinkedList<>();
+        for(Long dish: dishes) {
+            try {
+                dishesList.add(dishService.findById(dish));
+            } catch (DishNotFoundException e) {
+                return new DataResponse(Status.FAIL, "Dish not found", null);
+            }
+        }
+        return new DataResponse(Status.SUCCESS, "Dishes by id", dishesList);
     }
 }
