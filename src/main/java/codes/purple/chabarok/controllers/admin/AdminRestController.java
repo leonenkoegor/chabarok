@@ -85,4 +85,9 @@ public class AdminRestController {
     public DataResponse getOrders(@RequestParam @DateTimeFormat(pattern = "dd/MM/yyyy") Date date) {
         return new DataResponse(Status.SUCCESS, "Orders by date", orderDishesService.findAllByDate(date));
     }
+
+    @GetMapping("/admin/ordered/tables/get")
+    public DataResponse getOrderedTables(@RequestParam @DateTimeFormat(pattern = "dd/MM/yyyy") Date date) {
+        return new DataResponse(Status.SUCCESS, "Odered tables by date", orderedTableService.getByDate(date));
+    }
 }
