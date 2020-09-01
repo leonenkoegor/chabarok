@@ -18,5 +18,4 @@ function initMap() {
         info.open(map, marker);
     })
     marker.setMap(map);
-// To add the marker to the map, call setMap();
 }

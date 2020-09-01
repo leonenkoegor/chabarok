@@ -1,30 +1,30 @@
 .footer{
-    padding-top: 180px;
-    height: 980px;
+    padding-top: 13%;
+    padding-bottom: 13%;
+    height: 106vh;
     border-top: 3px solid #83071E;
 }
 footer p{
-    padding-bottom: 40px;
+    padding-bottom: 2.6%;
 }
 .footer-container{
     display: flex;
     justify-content: space-between;
-    height: 680px;
+    height: 53vh;
 }
 .footer-container .logo{
-    width: 160px;
-    height: 200px;
+
     background-size: contain;
 }
 .footer-container h4{
-    font-size: 32px;
+    font-size: 1.3rem;
     font-weight: 100;
     letter-spacing: 5px;
-    padding-top: 20px;
+    padding-top: 1vh;
 }
 
 .footer-contacts,.schedule {
-    font-size: 24px;
+    font-size: 1rem;
     font-weight: 100;
     letter-spacing: 2px;
     display: flex;
@@ -33,5 +33,5 @@ footer p{
     justify-content: space-between;
 }
 .time{
-    flex-grow: 0.8;
+    flex-grow: 0.72;
 }

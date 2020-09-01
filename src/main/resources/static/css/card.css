@@ -1,13 +1,13 @@
 .card-container{
 
     width: 100%;
-    height: 1150px;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 100px;
 }
 .card{
     width: 33.33%;
-    height: 1150px;
+
     background-color: #000000;
 }
 .card2{
@@ -15,27 +15,30 @@
 }
 .card-img{
     background-image: url("/img/card.png");
-    height: 550px;
+    height: 50vh;
+    width: 100%;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .card h3{
     font-family: 'Montserrat', sans-serif;
-    padding-left: 44px;
-    font-size: 34px;
+    padding-top: 5vh;
+    padding-left: 6.8%;
+    font-size: 1.4rem;
 }
 /*описание блюда и его параметы*/
 .foodDescription{
     width: 90%;
-    font-size: 29px;
-    padding-left: 44px;
-    padding-top: 60px;
-    padding-bottom: 52px;
+    font-size: 1.2rem;
+    padding-left: 6.8%;
+    padding-top: 5.4vh;
+    padding-bottom: 4.8vh;
 }
 .foodParamContainer{
     display: flex;
     justify-content: space-between;
-    padding-left: 44px;
-    font-size: 23px;
+    padding-left: 6.8%;
+    font-size: .96rem;
     width: 90%;
 }
 /*Значение веса*/
@@ -46,10 +49,17 @@
 /*---------Кнопка добавить в корзину---------*/
 .addToCartBtn{
     width: 52%;
-    font-size: 23px;
+    font-size: .96rem;
     text-align: center;
     padding: 22px 50px;
     border-radius: 10px;
     background-color: #E2002B;
-    margin: 110px auto;
+    margin: 50px auto;
+}
+@media (max-width:1366px) {
+    .card{
+        width: 50%;
+        height: max-content;
+    }
+
 }

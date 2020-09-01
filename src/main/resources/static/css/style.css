@@ -4,13 +4,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
 }
 h2{
-    font-size: 54px;
+    font-size: 2.25rem;
     font-family: 'Montserrat', sans-serif;
     padding-bottom: 90px;
     text-transform: uppercase;
     font-weight: 900;
+}
+ul{
+    list-style-type: none;
 }
 p{
     font-weight: 100;
@@ -24,10 +28,11 @@ html{
     max-width: 1920px;
     position: relative;
     color: white;
-    font-family: 'SF Pro Display';
+    font-family: 'SF Pro Display', serif;
     background-color: rgba(15,15,15,1);
     background-repeat: no-repeat;
     background-size: contain;
+    font-size: 24px;
 }
 html:after {
     content: '';
@@ -46,7 +51,80 @@ body{
     width: 100%;
 }
 .container{
-    margin: 0px auto;
+    margin: 0 auto;
     max-width: 1640px;
     width: 85%;
 }
+@media (max-width: 1900px) {
+    html{
+        font-size: 23px;
+    }
+
+}
+
+@media (max-width: 1700px) {
+    html{
+        font-size: 23px;
+    }
+}
+@media (max-width: 1600px) {
+    html{
+        font-size: 22px;
+    }
+}
+@media (max-width: 1500px) {
+    html{
+        font-size: 21px;
+    }
+}
+@media (max-width: 1400px) {
+    html{
+        font-size: 20px;
+    }
+}
+@media (max-width: 1300px) {
+    html{
+        font-size: 19px;
+    }
+}
+@media (max-width: 1200px) {
+    html{
+        font-size: 18px;
+    }
+}
+@media (max-width: 1100px) {
+    html{
+        font-size: 17px;
+    }
+}
+@media (max-width: 1000px) {
+    html{
+        font-size: 16px;
+    }
+}
+@media (max-width: 900px) {
+    html{
+        font-size: 15px;
+    }
+}
+@media (max-width: 800px) {
+    html{
+        font-size: 15.5px;
+    }
+}
+@media (max-width: 700px) {
+    html{
+        font-size: 15px;
+    }
+}
+@media (max-width: 600px) {
+    html{
+        font-size: 14.5px;
+    }
+}
+@media (max-width: 500px) {
+    html{
+        font-size: 14px;
+    }
+}
+

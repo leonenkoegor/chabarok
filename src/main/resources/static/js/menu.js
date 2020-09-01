@@ -20,7 +20,6 @@ function getLocalStorage() {
 
 
 getCategories.sendRequest(function (xhr) {
-    console.log(xhr);
         let categoryList = xhr.data;
         for(let i = 0;i<categoryList.length;i++){
             let category = document.createElement('li');

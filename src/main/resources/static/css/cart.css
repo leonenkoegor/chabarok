@@ -1,0 +1,30 @@
+.cart{
+    padding-top: 12vh;
+}
+.order{
+    height: 200vh;
+    border-top: 3px solid #83071E;
+    width: 100%;
+}
+.total{
+    height: 76%;
+    margin: 12% auto;
+    display: flex;
+    justify-content: space-between;
+}
+.image-container{
+    height: 100%;
+    width: 50%;
+    background-image: url(/img/totalBackground.png);
+}
+.result{
+    width: 50%;
+}
+.orderElem{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding: 20px 1px;
+    border-top: 1px solid #262A33;
+    border-bottom: 1px solid #262A33;
+}

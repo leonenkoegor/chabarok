@@ -25,14 +25,15 @@
     </div>
     <div class="container nav-container">
         <nav class="nav">
-            <div class="logo"><a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></div>
-            <ul class="nav-menu">
-                <li><a href="/menu">Меню</a></li>
-                <li><a href="/burak">Бурак</a></li>
-                <li><a href="/booking">Забронировать</a></li>
-                <li><a href="/contacts">Контакты</a></li>
-                <li><a href="/deliver">Доставка</a></li>
-                <li><a href="/cart">Корзина</a></li>
+            <div class="logo"><li><a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></li></div>
+            <ul class="nav-menu close" id="nav">
+                <li class="icon"  id="icon"><a href="javascript:void(0);" style="font-size: 30px">&#9776</a></li>
+                <li class="ft link"><a href="/menu">Меню</a></li>
+                <li class="ft link"><a href="/burak">Бурак</a></li>
+                <li class="ft link"><a href="/booking">Забронировать</a></li>
+                <li class="ft link"><a href="/contacts">Контакты</a></li>
+                <li class="ft link"><a href="/deliver">Доставка</a></li>
+                <li class="ft link"><a href="/cart">Корзина</a></li>
             </ul>
         </nav>
     </div>
@@ -53,6 +54,7 @@
                 летние террасы.
             </p>
         </div>
+
     </article>
     <article class="booking-peace">
         <div class="elipse">
@@ -70,25 +72,19 @@
         <div class="right">
             <div id="booking-container">
                 <div>
-                    <input value="Фамилия и имя" id="firstNameAndSecondName" type="text">
+                    <input placeholder="Фамилия и имя" id="firstNameAndSecondName" type="text">
+                    <p>*Введите вашу фамилию и имя</p>
+                    <input placeholder="Номер телефона" id="phoneNumber" type="text">
+                    <p>*Введите номер телефона</p>
+                    <input placeholder="Дата" id="date" type="text">
                     <p>*Выберите дату вашего празднования</p>
-                    <input value="Номер телефона" id="phoneNumber" type="text">
-                    <p>*Выберите дату вашего празднования</p>
-                    <input value="Дата" id="date" type="text">
-                    <p>*Выберите дату вашего празднования</p>
-                    <input value="Количество гостей" id="guestsCount" type="text">
+                    <input placeholder="Количество гостей" id="guestsCount" type="text">
                     <p>*Выберите количество ваших гостей</p>
-                    <p>Время с <input style="border: none;font-size: 22px" type="time" value="00:00" id="fromTime"> до <input id="toTime" value="00:00" style="border: none;font-size: 22px" type="time" ></p>
-                    <p>*Выберите количество ваших гостей</p>
-                </div>
-                <div class="calendarContainer">
-                    <div align=center>
-                        <div style="height:150px;"><div id="calendar_table"></div></div>
-                    </div>
-
+                    <div>Время:<input style="border: none;font-size: 22px" type="time" value="00:00" id="fromTime"><input  id="toTime" value="02:00" style="display:none;" type="time" ></div>
+                    <div id="searchTable">Найти столы</div>
                 </div>
             </div>
-            <div id="searchTable">Найти столы</div>
+
         </div>
     </article>
     <article class="menu-peace">
@@ -108,6 +104,7 @@
                 </div>
                 <div class="addToCartBtn">Добавить в корзину</div>
             </div>
+
             <div class="card card2">
                 <div class="card-img"></div>
                 <h3>Шашлык из говядины <br>
@@ -122,6 +119,7 @@
                 </div>
                 <div class="addToCartBtn">Добавить в корзину</div>
             </div>
+
             <div class="card">
                 <div class="card-img"></div>
                 <h3>Шашлык из говядины <br>
@@ -205,6 +203,7 @@
     </div>
 </footer>
 <script th:src="@{/js/map.js}" ></script>
+<script th:src="@{/js/adaptiveMenu.js}" ></script>
 <script th:src="@{/js/booking.js}" type="module"></script>
 <script th:src="@{/js/calendar.js}"></script>
 <script

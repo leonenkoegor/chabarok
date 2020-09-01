@@ -18,31 +18,32 @@ html{
 .bigLogo{
     margin: 140px auto;
     width: 30%;
-    height: 306px;
+    height: 28vh;
     background-repeat: no-repeat;
     background-image: url("/img/logomax.png");
     background-size: contain;
 }
-.booking-btn{
+.booking-btn {
     margin: 0 auto;
     width: min-content;
     padding: 28px 64px;
     border: 2px solid white;
     border-radius: 15px;
-    font-size: 22px;
+    font-size: 0.92rem;
 }
 /*Наша история*/
 
 .story {
-    height: 977px;
     padding-top: 160px;
+    position: relative;
 }
 .story-content p{
 
     padding-left: 80px;
-    font-size: 24px;
+    font-size: 1rem;
     width: 630px;
     border-left: 2px solid white;
+    margin-bottom: 60px;
 
 }
 /*Кусочек с бронирование столика*
@@ -51,13 +52,15 @@ html{
 
     width: 100%;
     margin: 0;
-    height: 1180px;
+
+
     display: flex;
     justify-content: space-between;
     position: relative;
     border-top: 3px solid white;
 }
 .elipse{
+    z-index: 55;
     position: absolute;
     width: 108px;
     height: 108px;
@@ -68,6 +71,7 @@ html{
     top: -54px;
 }
 .elipse .arrow{
+    z-index: 55;
     margin: 40px auto;
     width: 25px;
     height: 25px;
@@ -80,23 +84,22 @@ html{
     padding-left: 8%;
 }
 .right{
-    height: 960px;
     width: 50%;
     background-color: #263333;
 }
 .booking-content{
-    font-size: 24px;
+    font-size: 1rem;
 
     width: 550px;
 }
 /*Кусочек меню*/
 .menu-peace{
-    height: 1650px;
+
 }
 .menuLinkBtn{
     padding: 22px 50px;
     width: max-content;
-    font-size: 22px;
+    font-size: 0.92rem;
     border: 2px solid white;
     border-radius: 10px;
     max-width: 283px;
@@ -104,7 +107,7 @@ html{
 }
 
 .location-container{
-    font-size: 22px;
+    font-size: 0.92rem;
     text-transform: uppercase;
 }
 .address span span{
@@ -163,14 +166,14 @@ html{
     text-align: start;
     margin: 50px auto;
     font-family: 'Montserrat',sans-serif;
-    font-size: 24px;
+    font-size: 1rem;
 }
 /***************/
 .album{
     width: 100%;
+    height: 70vh;
     background-image: url("/img/album.png");
-    height: 1130px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 260px;
     position: relative;
@@ -193,7 +196,7 @@ html{
 }
 .album p{
     padding-left: 80px;
-    font-size: 24px;
+    font-size: 1rem;
     width: 630px;
     border-left: 2px solid white;
 }
@@ -207,7 +210,7 @@ table {
 
 td,
 th {
-    font-size: 22px;
+    font-size: 0.92rem;
     border: 3px solid white;
     padding: 10px;
     text-align: center;
@@ -223,18 +226,21 @@ th {
     background-color: #000;
     border-radius: 10px;
 }
+
 #booking-container{
     display: flex;
     width: 85%;
     margin: 250px auto;
-
-    justify-content: space-between;
+    justify-content: center;
+}
+#booking-container p{
+    padding-top: 20px;
 }
 #searchTable{
-    margin: -50px auto;
+    margin: 50px auto;
     width: max-content;
     padding: 22px 80px;
-    font-size: 22px;
+    font-size: 0.92rem;
     border: 2px solid white;
     border-radius: 10px;
     text-align: center;
@@ -242,7 +248,7 @@ th {
     letter-spacing: 1px;
 }
 .right p{
-    font-size: 14px;
+    font-size: 0.6rem;
     font-weight: bold;
     letter-spacing: 2px;
     color: #515B5B;
@@ -252,9 +258,10 @@ th {
 .right input{
     text-decoration: none;
     outline: none;
+    min-width: 300px;
     border: 2px solid white;
     color: white;
-    font-size: 30px;
+    font-size: 1.25rem;
     font-weight: 100;
     border-radius: 10px;
     padding-left: 20px;
@@ -266,4 +273,31 @@ th {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+@media (max-width: 1366px) {
+    .right{
+        width: 70%;
+
+    }
+    #booking-container{
+        flex-direction: column;
+    }
+    #booking-container p{
+        padding-bottom: 40px;
+    }
+    .events{
+        padding-top: 230px;
+        padding-bottom: 270px;
+    }
+    h2{
+        padding-bottom: 60px;
+    }
+    .bigLogo{
+        height: 20vh;
+        margin: 80px auto;
+        background-size: contain;
+    }
+    .story{
+        padding-top:80px;
+    }
 }

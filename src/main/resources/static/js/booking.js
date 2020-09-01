@@ -27,11 +27,20 @@ guestCount.addEventListener('click',clearInput);
 
 searchTable.addEventListener('click',sendBookingRequest);
 
+
 function sendBookingRequest() {
+    let trueFormat = String(document.getElementById('fromTime').value);
+    let trueFormat2 =String(document.getElementById('toTime').value);
+    if(trueFormat){
+        trueFormat = trueFormat.substring(1);
+    }
+    if(trueFormat2[0]===0){
+        trueFormat2 = trueFormat.substring(1);
+    }
     let send = {
         'orderedDate':document.getElementById('date').value,
-        'orderedFromTime':document.getElementById('fromTime').value,
-        'orderedToTime':document.getElementById('toTime').value,
+        'orderedFromTime':trueFormat,
+        'orderedToTime':trueFormat2,
         'peoples':document.getElementById('guestsCount').value,
         'name':document.getElementById('firstNameAndSecondName').value,
         'phoneNumber':document.getElementById('phoneNumber').value,
