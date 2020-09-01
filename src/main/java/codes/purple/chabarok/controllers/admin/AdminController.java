@@ -16,9 +16,15 @@ public class AdminController {
         return "admin-menu";
     }
 
+
     @GetMapping("/admin/booking")
     public String adminBookingPage() {
         return "admin-booking";
+    }
+
+    @GetMapping("/admin/orders")
+    public String adminOrdersPage() {
+        return "admin-orders";
     }
 
     //TODO NAhui udalit\'
