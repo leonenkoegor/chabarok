@@ -16,6 +16,11 @@ public class AdminController {
         return "admin-menu";
     }
 
+    @GetMapping("/admin/booking")
+    public String adminBookingPage() {
+        return "admin-booking";
+    }
+
     //TODO NAhui udalit\'
     @GetMapping("/admin/get/fragment/addUser")
     public String adminAddUserFragment() {

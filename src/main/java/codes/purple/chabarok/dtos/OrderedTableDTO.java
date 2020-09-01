@@ -10,9 +10,9 @@ import java.util.Date;
 public class OrderedTableDTO {
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date orderedDate;
-    @DateTimeFormat(pattern = "HH:mm:ss")
+    @DateTimeFormat(pattern = "HH:mm")
     private Date orderedFromTime;
-    @DateTimeFormat(pattern = "HH:mm:ss")
+    @DateTimeFormat(pattern = "HH:mm")
     private Date orderedToTime;
     private Long peoples;
     private String name;
