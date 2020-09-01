@@ -31,10 +31,10 @@ searchTable.addEventListener('click',sendBookingRequest);
 function sendBookingRequest() {
     let trueFormat = String(document.getElementById('fromTime').value);
     let trueFormat2 =String(document.getElementById('toTime').value);
-    if(trueFormat){
+    if(trueFormat.charAt(0)==='0'){
         trueFormat = trueFormat.substring(1);
     }
-    if(trueFormat2[0]===0){
+    if(trueFormat2.charAt(0)==='0'){
         trueFormat2 = trueFormat.substring(1);
     }
     let send = {
@@ -47,10 +47,9 @@ function sendBookingRequest() {
     }
     let request = new Request('GET','/ordered/table/add', send);
     request.sendRequest(function (xhr) {
-        if(xhr.status ==='SUCCESS'){
-            console.log('всё норм');
-        }else{
+        setTimeout(function () {
+            message.style.display = 'none';
+        },3000)
 
-        }
     })
 }

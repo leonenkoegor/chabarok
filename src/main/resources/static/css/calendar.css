@@ -2,7 +2,7 @@
     border: 1px solid #909090;
     border-collapse: collapse;
     font-family: 'Montserrat';
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 /* Заголовок */
 .calendar th {
@@ -20,13 +20,12 @@
 /* Ячейка дня */
 .calendar td {
     text-align: center;
-    width: 20px;
-    height: 18px;
-    padding-right: 4px;
+
+    padding:4px;
     border: 1px solid #909090;
     text-align: right;
     cursor: pointer;
-    font-size: 0.75rem;
+    font-size: 1.2rem;
 }
 /* Затемненный день */
 .calendar td.grayed {
@@ -49,4 +48,17 @@
     font-size: 17px;
     cursor: pointer;
     white-space: nowrap;
+}
+@media (max-width: 550px) {
+    td{
+        font-size: 0.8rem;
+    }
+    .calendar{
+        padding: 2px;
+        font-size: 0.7rem;
+    }
+    td.navigation{
+        font-size: .7rem;
+    }
+
 }

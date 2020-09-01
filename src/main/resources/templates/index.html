@@ -25,9 +25,11 @@
     </div>
     <div class="container nav-container">
         <nav class="nav">
-            <div class="logo"><li><a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></li></div>
+            <div class="logo">
+                <li><a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></li>
+            </div>
             <ul class="nav-menu close" id="nav">
-                <li class="icon"  id="icon"><a href="javascript:void(0);" style="font-size: 30px">&#9776</a></li>
+                <li class="icon" id="icon"><a href="javascript:void(0);" style="font-size: 30px">&#9776</a></li>
                 <li class="ft link"><a href="/menu">Меню</a></li>
                 <li class="ft link"><a href="/burak">Бурак</a></li>
                 <li class="ft link"><a href="/booking">Забронировать</a></li>
@@ -54,7 +56,6 @@
                 летние террасы.
             </p>
         </div>
-
     </article>
     <article class="booking-peace">
         <div class="elipse">
@@ -80,11 +81,13 @@
                     <p>*Выберите дату вашего празднования</p>
                     <input placeholder="Количество гостей" id="guestsCount" type="text">
                     <p>*Выберите количество ваших гостей</p>
-                    <div>Время:<input style="border: none;font-size: 22px" type="time" value="00:00" id="fromTime"><input  id="toTime" value="02:00" style="display:none;" type="time" ></div>
+                    <div>Время:
+                        <input style="border: none;font-size: 22px" type="time" value="00:00" id="fromTime">
+                        <input id="toTime" value="02:00"  type="time">
+                    </div>
                     <div id="searchTable">Найти столы</div>
                 </div>
             </div>
-
         </div>
     </article>
     <article class="menu-peace">
@@ -135,7 +138,7 @@
                 <div class="addToCartBtn">Добавить в корзину</div>
             </div>
         </div>
-        <div class="menuLinkBtn">Перейти в меню</div>
+        <div class="menuLinkBtn"><a th:href="@{/menu}"></a>Перейти в меню</div>
     </article>
     <article class="location-container">
         <div class="container"><h2>НАШЕ РАСПОЛОЖЕНИЕ</h2></div>
@@ -202,8 +205,8 @@
         <div class="logo"></div>
     </div>
 </footer>
-<script th:src="@{/js/map.js}" ></script>
-<script th:src="@{/js/adaptiveMenu.js}" ></script>
+<script th:src="@{/js/map.js}"></script>
+<script th:src="@{/js/adaptiveMenu.js}"></script>
 <script th:src="@{/js/booking.js}" type="module"></script>
 <script th:src="@{/js/calendar.js}"></script>
 <script

@@ -1,7 +1,8 @@
-/*Стили для всплывающего сообшения гугл карты*/
+
 html{
     background-image: url("/img/main-background.png");
 }
+/*Стили для всплывающего сообшения гугл карты*/
 #mapToastHeader{
     color: black;
 }
@@ -49,7 +50,7 @@ html{
 /*Кусочек с бронирование столика*
  */
 .booking-peace{
-
+    position: relative;
     width: 100%;
     margin: 0;
 
@@ -89,7 +90,7 @@ html{
 }
 .booking-content{
     font-size: 1rem;
-
+    position: relative;
     width: 550px;
 }
 /*Кусочек меню*/
@@ -301,3 +302,17 @@ th {
         padding-top:80px;
     }
 }
+/*****************************/
+.closeBookingContent{
+    z-index: 55;
+    margin: 40px auto;
+    width: 25px;
+    height: 25px;
+    border-bottom: 7px solid black;
+    border-left:7px solid black;
+    transform: rotate(-45deg);
+    top:5px;
+    left: 20px;
+    color: white;
+}
+/***************************/

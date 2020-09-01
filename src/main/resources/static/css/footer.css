@@ -3,6 +3,7 @@
     padding-bottom: 13%;
     height: 106vh;
     border-top: 3px solid #83071E;
+    z-index: 5;
 }
 footer p{
     padding-bottom: 2.6%;

@@ -1,3 +1,44 @@
+class Request {
+    constructor(method, url, data, isJSON = true) {
+        this.method = method;
+        this.url = url;
+        this.data = data;
+        this.isJSON = isJSON;
+    }
+
+    sendRequest(callback) {
+        const xhr = new XMLHttpRequest()
+
+        if (this.isJSON === true) {
+            xhr.responseType = 'json';
+        }
+
+        xhr.onload = () => {
+            callback(xhr.response);
+        }
+
+        if (typeof this.data === "string") {
+            xhr.open(this.method, this.url)
+            xhr.send(this.data);
+            return;
+        }
+
+        let body = "?";
+        for (let key in this.data) {
+            body += key + "=" + this.data[key] + "&";
+        }
+        body = body.substring(0, body.length - 1);
+
+        if (this.method === "GET") {
+            xhr.open(this.method, this.url + body);
+            xhr.send();
+        } else {
+            xhr.open(this.method, this.url);
+            xhr.send(body);
+        }
+    }
+}
+
 let dateTo = document.getElementById('date');
 
 calendar = {};
@@ -127,12 +168,59 @@ calendar.drawCalendar(
     calendar.selectedDate.Month,
     calendar.selectedDate.Year
 );
+let message = document.getElementById('message');
+let fromTime = document.getElementById('fromTime');
+let toTime = document.getElementById('toTime');
+function booking(){
+    if(fromTime.value.charAt(0)==='0'){
+        fromTime.value = fromTime.value.substring(1);
+    }
+    if(toTime.value.charAt(0)==='0'){
+        toTime.value = toTime.value.substring(1);
+    }
+    if(calendar.selectedDate.Day<10){
+        calendar.selectedDate.Day = '0'+calendar.selectedDate.Day;
+    }
+    if(calendar.selectedDate.Month<10){
+        calendar.selectedDate.Month = '0'+calendar.selectedDate.Month;
+    }
+   let send = {
+        'orderedDate':calendar.selectedDate.Day + '.'+calendar.selectedDate.Month+'.'+calendar.selectedDate.Year,
+        'orderedFromTime':fromTime.value,
+        'orderedToTime':toTime.value,
+        'peoples':document.getElementById('guestsCount').value,
+         'name':document.getElementById('firstNameAndSecondName').value,
+         'phoneNumber':document.getElementById('phoneNumber').value,
+     }
 
+     let request = new Request('GET','/ordered/table/add', send);
+     request.sendRequest(function (xhr) {
+         message.style.display = 'block';
+         message.textContent = 'Заявка на бронь успешно принята!';
+         setTimeout(function () {
+             message.style.display = 'none';
+         },3000)
 
-let arr = document.getElementsByClassName('days');
-for(let i=0;i<arr.length;i++){
+     })
+ }
 
-    arr[i].addEventListener('click',function (event) {
-        dateTo.value ='';
-    })
+ let searchTable = document.getElementById('searchTable');
+ searchTable.addEventListener('click',booking);
+ fromTime.addEventListener('input',timeCorrected);
+ toTime.addEventListener('input',timeCorrected);
+
+function timeCorrected() {
+    if(this.value.length === 2 ){
+        if(this.value[1]!=':'){
+            this.value+=':';
+        }
+        if(this.value[0]===':' || this.value[1]===':'){
+            this.value = '';
+        }
+    }
 }
+
+
+//
+//
+//
