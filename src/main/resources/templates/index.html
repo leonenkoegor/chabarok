@@ -10,42 +10,44 @@
     <link rel="stylesheet" th:href="@{/css/card.css}">
     <link rel="stylesheet" th:href="@{/css/commonHeader.css}">
     <link rel="stylesheet" th:href="@{/css/calendar.css}">
+    <link rel="stylesheet" th:href="@{/css/booking.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
     <title>Чабарок</title>
 </head>
 <body>
-<header class="header">
-    <div class="pre-header">
-        <div class="location"><span><img th:src="@{/img/ic_place_24px.png}" alt="location">Гомель, Черниговское шоссе 9-й км.</span>
-        </div>
-        <div class="phones">
-            <span>+ 375 232 37 84 00</span>
-            <span>+ 375 44 722 26 54 </span>
-        </div>
-    </div>
-    <div class="container nav-container">
-        <nav class="nav">
-            <div class="logo">
-                <li><a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></li>
+<div class="backgroundContainer">
+    <header class="header">
+        <div class="pre-header">
+            <div class="location"><span><img th:src="@{/img/ic_place_24px.png}" alt="location">Гомель, Черниговское шоссе 9-й км.</span>
             </div>
-            <ul class="nav-menu close" id="nav">
-                <li class="icon" id="icon"><a href="javascript:void(0);" style="font-size: 30px">&#9776</a></li>
-                <li class="ft link"><a href="/menu">Меню</a></li>
-                <li class="ft link"><a href="/burak">Бурак</a></li>
-                <li class="ft link"><a href="/booking">Забронировать</a></li>
-                <li class="ft link"><a href="/contacts">Контакты</a></li>
-                <li class="ft link"><a href="/deliver">Доставка</a></li>
-                <li class="ft link"><a href="/cart">Корзина</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<main>
+            <div class="phones">
+                <span>+ 375 232 37 84 00</span>
+                <span>+ 375 44 722 26 54 </span>
+            </div>
+        </div>
+        <div class="container nav-container">
+            <nav class="nav">
+                <div class="logo">
+                    <li><a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></li>
+                </div>
+                <ul class="nav-menu close" id="nav">
+                    <li class="icon" id="icon"><a href="javascript:void(0);" style="font-size: 30px">&#9776</a></li>
+                    <li class="ft link"><a href="/menu">Меню</a></li>
+                    <li class="ft link"><a href="/burak">Бурак</a></li>
+                    <li class="ft link"><a href="/booking">Забронировать</a></li>
+                    <li class="ft link"><a href="/contacts">Контакты</a></li>
+                    <li class="ft link"><a href="/deliver">Доставка</a></li>
+                    <li class="ft link"><a href="/cart">Корзина</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <article class="booking">
         <div class="bigLogo"></div>
         <div class="booking-btn">Забронировать</div>
     </article>
-    <article class="story container">
+    <article class="story">
         <div class="story-content">
             <h2>НАША ИСТОРИЯ</h2>
             <p>Ресторан «Чабарок» - это именно то место, где вы сможете отдохнуть от шумной суеты большого города,
@@ -57,6 +59,8 @@
             </p>
         </div>
     </article>
+</div>
+<main>
     <article class="booking-peace">
         <div class="elipse">
             <div class="arrow">
@@ -70,24 +74,31 @@
                 как предусмотрительность. <br> Все идет по плану когда есть Бронь.
             </p>
         </div>
+
         <div class="right">
             <div id="booking-container">
-                <div>
-                    <input placeholder="Фамилия и имя" id="firstNameAndSecondName" type="text">
-                    <p>*Введите вашу фамилию и имя</p>
-                    <input placeholder="Номер телефона" id="phoneNumber" type="text">
-                    <p>*Введите номер телефона</p>
-                    <input placeholder="Дата" id="date" type="text">
+                <div class="fieldWrapper">
+                    <input class="textInput" placeholder="Фамилия и имя" id="firstNameAndSecondName" type="text">
                     <p>*Выберите дату вашего празднования</p>
-                    <input placeholder="Количество гостей" id="guestsCount" type="text">
+                    <input class="textInput" placeholder="Номер телефона" id="phoneNumber" type="text">
+                    <p>*Выберите дату вашего празднования</p>
+                    <input class="textInput" placeholder="Количество гостей" id="guestsCount" type="text">
                     <p>*Выберите количество ваших гостей</p>
-                    <div>Время:
-                        <input style="border: none;font-size: 22px" type="time" value="00:00" id="fromTime">
-                        <input id="toTime" value="02:00"  type="time">
+                    <div>Время : <input maxlength="5"  type="text" placeholder="00:00" id="fromTime">
+                        до <input maxlength="5" id="toTime" placeholder="00:00"  type="text"></div>
+                    <p>*Выберите количество ваших гостей</p>
+                </div>
+                <div class="calendarContainer">
+                    <div align=center>
+                        <div>
+                            <div id="calendar_table"></div>
+                        </div>
                     </div>
-                    <div id="searchTable">Найти столы</div>
+
                 </div>
             </div>
+            <div id="searchTable">Найти столы</div>
+            <div id="message">Заявка на бронь принята!</div>
         </div>
     </article>
     <article class="menu-peace">
@@ -207,7 +218,6 @@
 </footer>
 <script th:src="@{/js/map.js}"></script>
 <script th:src="@{/js/adaptiveMenu.js}"></script>
-<script th:src="@{/js/booking.js}" type="module"></script>
 <script th:src="@{/js/calendar.js}"></script>
 <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwRwmB9UWvRy9nmZiUerlAZpS23pOD-gU&callback=initMap&libraries=&v=weekly"

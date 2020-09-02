@@ -1,6 +1,28 @@
-
-html{
+.backgroundContainer{
     background-image: url("/img/main-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    position: relative;
+    z-index: 2;
+}
+.fieldWrapper p{
+    font-size: 0.7rem;
+    letter-spacing: 1.4px;
+    color: #787778;
+    padding-top: 1.2vh;
+    padding-bottom: 2.5vh;
+}
+.backgroundContainer:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15,15,15,.7);
+    z-index: -1;
 }
 /*Стили для всплывающего сообшения гугл карты*/
 #mapToastHeader{
@@ -12,12 +34,9 @@ html{
 /*---------------------------------------------*/
 
 /*------main---------*/
-.booking{
-    height: 640px;
-    border-bottom: 3px solid white;
-}
+
 .bigLogo{
-    margin: 140px auto;
+    margin: 14vh auto;
     width: 30%;
     height: 28vh;
     background-repeat: no-repeat;
@@ -35,16 +54,16 @@ html{
 /*Наша история*/
 
 .story {
-    padding-top: 160px;
+    padding: 14vh 9%;
     position: relative;
+    padding-bottom: 31vh;
+    border-top: 3px solid white;
 }
 .story-content p{
-
-    padding-left: 80px;
+    padding-left: 8%;
     font-size: 1rem;
-    width: 630px;
+    width: 50%;
     border-left: 2px solid white;
-    margin-bottom: 60px;
 
 }
 /*Кусочек с бронирование столика*
@@ -53,12 +72,11 @@ html{
     position: relative;
     width: 100%;
     margin: 0;
-
-
     display: flex;
     justify-content: space-between;
     position: relative;
     border-top: 3px solid white;
+    padding-bottom: 20vh;
 }
 .elipse{
     z-index: 55;
@@ -88,11 +106,7 @@ html{
     width: 50%;
     background-color: #263333;
 }
-.booking-content{
-    font-size: 1rem;
-    position: relative;
-    width: 550px;
-}
+
 /*Кусочек меню*/
 .menu-peace{
 
@@ -228,52 +242,8 @@ th {
     border-radius: 10px;
 }
 
-#booking-container{
-    display: flex;
-    width: 85%;
-    margin: 250px auto;
-    justify-content: center;
-}
-#booking-container p{
-    padding-top: 20px;
-}
-#searchTable{
-    margin: 50px auto;
-    width: max-content;
-    padding: 22px 80px;
-    font-size: 0.92rem;
-    border: 2px solid white;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: 100;
-    letter-spacing: 1px;
-}
-.right p{
-    font-size: 0.6rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #515B5B;
-    padding-left: 10px;
-    padding-bottom: 60px;
-}
-.right input{
-    text-decoration: none;
-    outline: none;
-    min-width: 300px;
-    border: 2px solid white;
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 100;
-    border-radius: 10px;
-    padding-left: 20px;
-    height: 70px;
-    background-color: rgba(0,0,0,0);
-}
-#booking-container>div{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.right{
+    padding: 50px;
 }
 @media (max-width: 1366px) {
     .right{

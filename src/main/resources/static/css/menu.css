@@ -1,5 +1,21 @@
-html{
+.menuWrapper {
     background-image: url("/img/IMG_3484.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    position: relative;
+    z-index: 2;
+}
+
+.menuWrapper:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 15, 15, .7);
+    z-index: -1;
 }
 .menu{
     padding-top: 14.8vh;

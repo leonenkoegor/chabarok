@@ -1,5 +1,5 @@
 
-.contentWrapper{
+.contentWrapper {
     background-image: url("/img/bookingBackground.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -7,20 +7,23 @@
     position: relative;
     z-index: 2;
 }
-.contentWrapper:before{
+
+.contentWrapper:before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(15,15,15,.7);
+    background: rgba(15, 15, 15, .7);
     z-index: -1;
 }
-h2{
+
+h2 {
     text-align: center;
 }
-p{
+
+p {
     font-size: 0.7rem;
     letter-spacing: 1.4px;
     color: #787778;
@@ -28,17 +31,19 @@ p{
     padding-bottom: 2.5vh;
 }
 
-.booking{
+.booking {
     padding-top: 10vh;
     height: 95vh;
     width: 45%;
     margin: 0 auto;
 }
-#booking-container{
+
+#booking-container {
     display: flex;
     justify-content: space-between;
 }
-.textInput,#fromTime,#toTime{
+
+.textInput, #fromTime, #toTime {
     background: none;
     outline: none;
     padding-left: 2%;
@@ -48,18 +53,22 @@ p{
     color: white;
     font-size: 1rem;
 }
-.textInput{
+
+.textInput {
     width: 80%;
 }
-.fieldWrapper{
+
+.fieldWrapper {
     width: 50%;
 }
-#fromTime,#toTime{
+
+#fromTime, #toTime {
     border: 2px solid white;
     width: 3.6rem;
     margin: 0 10px;
 }
-#searchTable{
+
+#searchTable {
     border-radius: 10px;
     border: 2px solid white;
     color: white;
@@ -70,15 +79,18 @@ p{
     padding: 20px;
     transition: all .2s step-start;
 }
-#searchTable:hover{
+
+#searchTable:hover {
     background-color: white;
     color: black;
 }
-#searchTable:active{
+
+#searchTable:active {
     background-color: black;
     color: white;
 }
-#message{
+
+#message {
     width: 50%;
     text-align: center;
     padding: 5px;
@@ -91,61 +103,145 @@ p{
 }
 
 @media (max-width: 1750px) {
-   .booking{
-       width: 55%;
-   }
+    .booking {
+        width: 55%;
+    }
 }
+
 @media (max-width: 1000px) {
-    .booking{
+    .booking {
         width: 65%;
     }
 }
+
 @media (max-width: 850px) {
-    .booking{
+    .booking {
         width: 80%;
     }
 }
+
 @media (max-width: 600px) {
-    .booking{
+    .booking {
         width: 90%;
     }
 }
+
 @media (max-width: 550px) {
-    h2{
-       font-size: 1.7rem;
+    h2 {
+        font-size: 1.7rem;
         padding-bottom: 20px;
     }
 }
+
 @media (max-width: 480px) {
-    .booking{
+    .booking {
         width: 100%;
         padding-top: 5vh;
     }
-    h2{
+
+    h2 {
         font-size: 1.7rem;
     }
-    .fieldWrapper{
+
+    .fieldWrapper {
         width: 60%;
         margin-top: 10px;
     }
-    #booking-container{
+
+    #booking-container {
         width: 100%;
         flex-direction: column-reverse;
         align-items: center;
         justify-content: space-between;
     }
-    .textInput{
+
+    .textInput {
         width: 100%;
     }
-    #searchTable{
+
+    #searchTable {
         margin: 2vh auto;
     }
+
+    @media (max-width: 1750px) {
+        .booking {
+            width: 55%;
+        }
+    }
+    @media (max-width: 1000px) {
+        .booking {
+            width: 65%;
+        }
+    }
+    @media (max-width: 850px) {
+        .booking {
+            width: 80%;
+        }
+    }
+    @media (max-width: 600px) {
+        .booking {
+            width: 90%;
+        }
+    }
+    @media (max-width: 550px) {
+        h2 {
+            font-size: 1.7rem;
+            padding-bottom: 20px;
+        }
+    }
+    @media (max-width: 480px) {
+        .booking {
+            width: 100%;
+            padding-top: 5vh;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+        }
+
+        .fieldWrapper {
+            width: 60%;
+            margin-top: 10px;
+        }
+
+        #booking-container {
+            width: 100%;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .textInput {
+            width: 100%;
+        }
+
+        #searchTable {
+            margin: 2vh auto;
+        }
+    }
+    @media (max-width: 360px) {
+        .fieldWrapper {
+            width: 80%;
+        }
+
+        #searchTable {
+
+            margin: 1.5vh auto;
+            width: 45%;
+            text-align: center;
+            padding: 10px;
+            transition: all .2s step-start;
+        }
+
+    }
 }
+
 @media (max-width: 360px) {
-    .fieldWrapper{
+    .fieldWrapper {
         width: 80%;
     }
-    #searchTable{
+
+    #searchTable {
 
         margin: 1.5vh auto;
         width: 45%;
