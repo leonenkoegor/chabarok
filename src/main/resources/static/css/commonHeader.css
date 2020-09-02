@@ -58,6 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    z-index: 10;
 }
 @media (max-width: 1023px) {
     .nav-container{

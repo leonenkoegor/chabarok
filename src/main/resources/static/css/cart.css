@@ -17,7 +17,7 @@
     width: 50%;
     background-image: url(/img/totalBackground.png);
 }
-.result{
+.resultContainer{
     width: 50%;
 }
 .orderElem{
@@ -27,4 +27,43 @@
     padding: 20px 1px;
     border-top: 1px solid #262A33;
     border-bottom: 1px solid #262A33;
+}
+.result div h2{
+    font-size: 1rem;
+    font-weight: 900;
+}
+.result>div{
+    padding-top: 3vh;
+}
+.result{
+    display: flex;
+    justify-content: space-between;
+}
+#resultCost{
+    padding-right: 10%;
+}
+
+.form div{
+    width: 50%;
+    margin: 3vh 20%;
+}
+.form input{
+    background-color: black;
+    outline: none;
+    border: 1px solid black;
+    color: white;
+    font-size: .92rem;
+    padding-left: 3%;
+    height: 6.5vh;
+    border-radius: 5px;
+    width: 100%;
+}
+#btn{
+    width: 30%;
+    margin: 3vh 31%;
+    background-color: #E2002B;
+    padding: 2vh;
+    text-align: center;
+    font-size: .92rem;
+    border-radius: 10px;
 }

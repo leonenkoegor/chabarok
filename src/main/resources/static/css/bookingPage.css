@@ -7,16 +7,6 @@
     position: relative;
     z-index: 2;
 }
-h2{
-    text-align: center;
-}
-p{
-    font-size: 0.7rem;
-    letter-spacing: 1.4px;
-    color: #787778;
-    padding-top: 1.2vh;
-    padding-bottom: 2.5vh;
-}
 .contentWrapper:before{
     content: '';
     position: absolute;
@@ -27,6 +17,17 @@ p{
     background: rgba(15,15,15,.7);
     z-index: -1;
 }
+h2{
+    text-align: center;
+}
+p{
+    font-size: 0.7rem;
+    letter-spacing: 1.4px;
+    color: #787778;
+    padding-top: 1.2vh;
+    padding-bottom: 2.5vh;
+}
+
 .booking{
     padding-top: 10vh;
     height: 95vh;
