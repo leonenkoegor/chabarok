@@ -1,10 +1,131 @@
-right{
-    height: 960px;
-    width: 50%;
-    background-color: #263333;
-}
-.booking-content{
-    font-size: 24px;
 
-    width: 550px;
+
+.booking{
+    padding-top: 10vh;
+    height: 95vh;
+    width: 45%;
+    margin: 0 auto;
+}
+#booking-container{
+    display: flex;
+    justify-content: space-between;
+}
+.textInput,#fromTime,#toTime{
+    background: none;
+    outline: none;
+    padding-left: 2%;
+    border-radius: 10px;
+    height: 5.5vh;
+    border: 2px solid white;
+    color: white;
+    font-size: 1rem;
+}
+.textInput{
+    width: 80%;
+}
+.fieldWrapper{
+    width: 50%;
+}
+#fromTime,#toTime{
+    border: 2px solid white;
+    width: 3.6rem;
+    margin: 0 10px;
+}
+#searchTable{
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+    font-size: 1rem;
+    margin: 3vh auto;
+    width: 35%;
+    text-align: center;
+    padding: 20px;
+    transition: all .2s step-start;
+}
+#searchTable:hover,.booking-btn:hover{
+    background-color: darkgrey;
+    color: black;
+    cursor: pointer;
+}
+
+#searchTable:active{
+    background-color: black;
+    color: white;
+}
+#message{
+    width: 50%;
+    text-align: center;
+    padding: 5px;
+    margin: 10px auto;
+    background-color: black;
+    border-radius: 5px;
+    display: none;
+    transition: all .2s ease;
+
+}
+
+@media (max-width: 1750px) {
+    .booking{
+        width: 55%;
+    }
+}
+@media (max-width: 1000px) {
+    .booking{
+        width: 65%;
+    }
+}
+@media (max-width: 850px) {
+    .booking{
+        width: 80%;
+    }
+}
+@media (max-width: 600px) {
+    .booking{
+        width: 90%;
+    }
+}
+@media (max-width: 550px) {
+    h2{
+        font-size: 1.7rem;
+        padding-bottom: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .booking{
+        width: 100%;
+        padding-top: 5vh;
+    }
+    h2{
+        font-size: 1.7rem;
+    }
+    .fieldWrapper{
+        width: 60%;
+        margin-top: 10px;
+    }
+    #booking-container{
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .textInput{
+        width: 100%;
+    }
+    #searchTable{
+        margin: 2vh auto;
+    }
+}
+@media (max-width: 360px) {
+    .fieldWrapper{
+        width: 80%;
+    }
+    #searchTable{
+
+        margin: 1.5vh auto;
+        width: 45%;
+        text-align: center;
+        padding: 10px;
+        transition: all .2s step-start;
+    }
+
 }

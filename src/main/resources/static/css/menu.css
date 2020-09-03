@@ -1,11 +1,27 @@
-html{
+.menuWrapper {
     background-image: url("/img/IMG_3484.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    position: relative;
+    z-index: 2;
+}
+
+.menuWrapper:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 15, 15, .7);
+    z-index: -1;
 }
 .menu{
-    padding-top: 160px;
-    margin-bottom: 160px;
+    padding-top: 14.8vh;
+    margin-bottom: 14.8vh;
     width:100%;
-    height:950px;
+    height:100vh;
     position: relative;
 }
 .menuBlock{
@@ -16,16 +32,24 @@ html{
 .headerContainer p{
     letter-spacing: 2px;
     font-weight: 100;
-    font-size: 24px;
+    font-size: 1rem;
 }
 .subMenuContainer{
-    padding-top: 50px;
+    padding-top: 4.6vh;
     width: 60%;
-    font-size: 24px;
+    font-size: 1rem;
     font-weight: 100;
     letter-spacing: 1.5px;
     display: flex;
     justify-content: space-between;
+}
+.subMenuContainer li:hover{
+    color: #F78F00;
+    cursor: pointer;
+}
+.subMenuContainer ul:first-child:hover{
+    color:white;
+    cursor: none;
 }
 .subMenu{
     display: flex;
@@ -34,7 +58,7 @@ html{
     flex-wrap: wrap;
 }
 .subMenu li{
-    padding-bottom: 20px;
+    padding-bottom: 1.8vh;
 }
 
 /*********/
@@ -45,7 +69,7 @@ table {
 
 td,
 th {
-    font-size: 22px;
+    font-size: 1rem;
     border: 3px solid white;
     padding: 10px;
     text-align: center;
@@ -65,7 +89,7 @@ th {
 
     width: 100%;
     margin: 0;
-    height: 1180px;
+    height: 100vh;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -98,7 +122,7 @@ th {
     background-color: #263333;
 }
 .booking-content{
-    font-size: 24px;
+    font-size: 1rem;
 
     width: 550px;
 }
@@ -113,7 +137,7 @@ th {
     margin: -50px auto;
     width: max-content;
     padding: 22px 80px;
-    font-size: 22px;
+    font-size: 0.92rem;
     border: 2px solid white;
     border-radius: 10px;
     text-align: center;
@@ -121,7 +145,7 @@ th {
     letter-spacing: 1px;
 }
 .right p{
-    font-size: 14px;
+    font-size: 0.6rem;
     font-weight: bold;
     letter-spacing: 2px;
     color: #515B5B;
@@ -133,7 +157,7 @@ th {
     outline: none;
     border: 2px solid white;
     color: white;
-    font-size: 30px;
+    font-size: 1.25rem;
     font-weight: 100;
     border-radius: 10px;
     padding-left: 20px;

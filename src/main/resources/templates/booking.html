@@ -6,64 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="HandheldFriendly" content="true"/>
     <link rel="stylesheet" th:href="@{/css/style.css}">
-    <link rel="stylesheet" th:href="@{/css/booking.css}">
     <link rel="stylesheet" th:href="@{/css/commonHeader.css}">
+    <link rel="stylesheet" th:href="@{/css/bookingPage.css}">
+    <link rel="stylesheet" th:href="@{/css/booking.css}">
     <link rel="stylesheet" th:href="@{/css/calendar.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
     <title>Забронировать</title>
 </head>
 <body>
-<header class="header">
-    <div class="pre-header">
-        <div class="location"><span><img th:src="@{/img/ic_place_24px.png}" alt="location">Гомель, Черниговское шоссе 9-й км.</span>
-        </div>
-        <div class="phones">
-            <span>+ 375 232 37 84 00</span>
-            <span>+ 375 44 722 26 54 </span>
-        </div>
-    </div>
-    <div class="container nav-container">
-        <nav class="nav">
-            <div class="logo"><a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></div>
-            <ul class="nav-menu">
-                <li><a href="/menu">Меню</a></li>
-                <li><a href="/burak">Бурак</a></li>
-                <li><a href="/booking">Забронировать</a></li>
-                <li><a href="/contacts">Контакты</a></li>
-                <li><a href="/deliver">Доставка</a></li>
-                <li><a href="/cart">Корзина</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<main>
-    <article class="booking">
-        <h2>Забронировать столик</h2>
-        <div class="right">
-            <div id="booking-container">
-                <div>
-                    <input value="Фамилия и имя" id="firstNameAndSecondName" type="text">
-                    <p>*Выберите дату вашего празднования</p>
-                    <input value="Номер телефона" id="phoneNumber" type="text">
-                    <p>*Выберите дату вашего празднования</p>
-                    <input value="Дата" id="date" type="text">
-                    <p>*Выберите дату вашего празднования</p>
-                    <input value="Количество гостей" id="guestsCount" type="text">
-                    <p>*Выберите количество ваших гостей</p>
-                    <p>Время с <input style="border: none;font-size: 22px" type="time" value="00:00" id="fromTime"> до <input id="toTime" value="00:00" style="border: none;font-size: 22px" type="time" ></p>
-                    <p>*Выберите количество ваших гостей</p>
-                </div>
-                <div class="calendarContainer">
-                    <div align=center>
-                        <div style="height:150px;"><div id="calendar_table"></div></div>
-                    </div>
-
-                </div>
+<div class="contentWrapper">
+    <header class="header">
+        <div class="pre-header">
+            <div class="location"><span><img th:src="@{/img/ic_place_24px.png}" alt="location">Гомель, Черниговское шоссе 9-й км.</span>
             </div>
-            <div id="searchTable">Найти столы</div>
+            <div class="phones">
+                <span>+ 375 232 37 84 00</span>
+                <span>+ 375 44 722 26 54 </span>
+            </div>
         </div>
-    </article>
-</main>
+        <div class="container nav-container">
+            <nav class="nav">
+                <div class="logo">
+                    <li><a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></li>
+                </div>
+                <ul class="nav-menu close" id="nav">
+                    <li class="icon" id="icon"><a href="javascript:void(0);" style="font-size: 30px">&#9776</a></li>
+                    <li class="ft link"><a href="/">Главная</a></li>
+                    <li class="ft link"><a href="/menu">Меню</a></li>
+                    <li class="ft link"><a href="/booking">Забронировать</a></li>
+                    <li class="ft link"><a href="/contacts">Контакты</a></li>
+                    <li class="ft link"><a href="/deliver">Доставка</a></li>
+                    <li class="ft link"><a href="/cart">Корзина</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article class="booking">
+            <h2>Забронировать столик</h2>
+
+                <div id="booking-container">
+                    <div class="fieldWrapper">
+                        <input class="textInput" placeholder="Фамилия и имя" id="firstNameAndSecondName" type="text">
+                        <p>*Выберите дату вашего празднования</p>
+                        <input class="textInput" placeholder="Номер телефона" id="phoneNumber" type="text">
+                        <p>*Выберите дату вашего празднования</p>
+                        <input class="textInput" placeholder="Количество гостей" id="guestsCount" type="text">
+                        <p>*Выберите количество ваших гостей</p>
+                        <div>Время : <input maxlength="5"  type="text" placeholder="00:00" id="fromTime">
+                            до <input maxlength="5" id="toTime" placeholder="00:00"  type="text"></div>
+                        <p>*Выберите количество ваших гостей</p>
+                    </div>
+                    <div class="calendarContainer">
+                        <div align=center>
+                            <div>
+                                <div id="calendar_table"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="searchTable">Найти столы</div>
+                <div id="message">Заявка на бронь принята!</div>
+        </article>
+    </main>
+</div>
 <footer class="footer">
     <div class="container footer-container">
         <div class="footer-contacts">
@@ -86,11 +93,9 @@
         <div class="logo"></div>
     </div>
 </footer>
-<script th:src="@{/js/map.js}" ></script>
-<script th:src="@{/js/booking.js}"></script>
-<script th:src="@{/js/calendar.js}"></script>
-<script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwRwmB9UWvRy9nmZiUerlAZpS23pOD-gU&callback=initMap&libraries=&v=weekly"
-        async defer></script>
+
+<script th:src="@{/js/calendar.js}" ></script>
+<script th:src="@{/js/adaptiveMenu.js}"></script>
+
 </body>
 </html>
