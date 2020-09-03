@@ -1,6 +1,6 @@
 import Request from "./Request.js"
-let select = document.getElementById('categoryId');
-let select2 = document.getElementById('categoryId2');
+let select = document.getElementById('select');
+let select2 = document.getElementById('select2');
 let getCategories = new Request('GET','/menu/categories/get');
 getCategories.sendRequest(function (xhr) {
     console.log(xhr);

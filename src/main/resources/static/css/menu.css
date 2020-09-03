@@ -43,6 +43,14 @@
     display: flex;
     justify-content: space-between;
 }
+.subMenuContainer li:hover{
+    color: #F78F00;
+    cursor: pointer;
+}
+.subMenuContainer ul:first-child:hover{
+    color:white;
+    cursor: none;
+}
 .subMenu{
     display: flex;
     list-style-type: none;

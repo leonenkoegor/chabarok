@@ -105,6 +105,9 @@
         border: 1px solid white;
         border-radius: 10px;
     }
+    .icon:hover{
+        border: 1px solid #F78F00;
+    }
 }
 .responsive{
     transition: all .3s ease-out;

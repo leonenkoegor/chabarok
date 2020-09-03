@@ -42,10 +42,12 @@
     padding: 20px;
     transition: all .2s step-start;
 }
-#searchTable:hover{
-    background-color: white;
+#searchTable:hover,.booking-btn:hover{
+    background-color: darkgrey;
     color: black;
+    cursor: pointer;
 }
+
 #searchTable:active{
     background-color: black;
     color: white;

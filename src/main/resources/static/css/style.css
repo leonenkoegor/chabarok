@@ -19,11 +19,20 @@ ul{
 }
 p{
     font-weight: 100;
+    letter-spacing: 1px;
 }
 a{
+    display: block;
     color:white;
     text-decoration: none;
     outline: none;
+}
+#searchTable:hover{
+    rgba(226,0,44,.5)
+}
+a:hover{
+    transition: all .3s ease;
+    color: #F78F00;
 }
 html{
     max-width: 1920px;
