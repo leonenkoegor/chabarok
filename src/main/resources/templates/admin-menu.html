@@ -33,7 +33,7 @@
         </div>
         <div class="card">
             <form class="d-flex flex-column justify-content-xl-center align-items-xl-center" action="/admin/menu/dish/add" method="post" enctype="multipart/form-data">
-                <h4 class="text-center">Добавить блюдо</h4><input class="form-control" type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"><select id="select" class="form-control">
+                <h4 class="text-center">Добавить блюдо</h4><input class="form-control" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><select id="select" class="form-control">
 
                 <optgroup label="Подкатегория"></optgroup></select><input class="form-control" type="text" placeholder="Название"
                     name="name"><input class="form-control" type="text" placeholder="Описание" name="description"><input class="form-control" type="text" placeholder="Вес" name="weight"><input class="form-control" type="text" placeholder="Стоимость" name="cost"><span>Фото:</span>
