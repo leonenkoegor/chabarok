@@ -16,7 +16,7 @@ public class OrderDishes {
     private Long id;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "orderDishes")
     private List<OrderDish> orderDishList;
-    private Long totalPrice;
+    private Double totalPrice;
     private String name;
     private String address;
     private String phoneNumber;
