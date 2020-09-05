@@ -10,11 +10,13 @@ import java.util.Set;
 public class CategoryDTO {
     private String mainCategoryName;
     private String name;
+    private Boolean allowToOrder;
     private Set<Dish> dishes;
 
     public CategoryDTO(Category category) {
         this.mainCategoryName = category.getMainCategoryName();
         this.name = category.getName();
+        this.allowToOrder = category.getAllowToOrder();
         this.dishes = category.getDishes();
     }
 

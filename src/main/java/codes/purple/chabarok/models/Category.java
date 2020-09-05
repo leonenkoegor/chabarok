@@ -19,6 +19,7 @@ public class Category {
     private Long id;
     private String mainCategoryName;
     private String name;
+    private Boolean allowToOrder;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "categoryDish",
@@ -32,6 +33,7 @@ public class Category {
         this.mainCategoryName = categoryDTO.getMainCategoryName();
         this.name = categoryDTO.getName();
         this.dishes = categoryDTO.getDishes();
+        this.allowToOrder = categoryDTO.getAllowToOrder();
     }
 
     @Tolerate
