@@ -39,8 +39,8 @@ btnOrder.addEventListener('click', sendOrder);
        })
    }
 function plusFunc() {
-     let startPrice = parseFloat(this.previousElementSibling.textContent);
-    totalPrice.textContent = parseFloat(totalPrice.textContent) + startPrice;
+    let startPrice = parseFloat(this.parentElement.parentElement.getAttribute('price'));
+    totalPrice.textContent = (parseFloat(totalPrice.textContent) + startPrice).toFixed(2);
     let value = this.nextElementSibling.textContent;
     value++;
     this.nextElementSibling.textContent = value;
@@ -49,13 +49,13 @@ function plusFunc() {
 }
 
 function minusFunc() {
-    let startPrice = parseFloat(this.previousElementSibling.textContent);
+    let startPrice = parseFloat(this.parentElement.parentElement.getAttribute('price'));
     let value = this.previousElementSibling.textContent;
     if (value != 1) {
-        totalPrice.textContent = parseFloat(totalPrice.textContent) - startPrice;
+        totalPrice.textContent = (parseFloat(totalPrice.textContent) - startPrice).toFixed(2);
         value--;
         this.previousElementSibling.textContent = value;
-        this.previousElementSibling.previousElementSibling.previousElementSibling.textContent = this.previousElementSibling.previousElementSibling.previousElementSibling.textContent / 2;
+        this.previousElementSibling.previousElementSibling.previousElementSibling.textContent = this.previousElementSibling.previousElementSibling.previousElementSibling.textContent - startPrice;
 
     }
 
@@ -91,6 +91,7 @@ request.sendRequest(function (xhr) {
             let li = document.createElement('li');
             li.className = 'orderElem';
             li.setAttribute('subId', xhr["data"][i]["id"]);
+            li.setAttribute('price', xhr["data"][i]["cost"])
             li.innerHTML = `
                     <div>
                             <span class="name">${xhr["data"][i]["name"]}</span>
@@ -102,7 +103,6 @@ request.sendRequest(function (xhr) {
                 `
             order.append(li);
             cardContainer.append(card);
-
             let plus = document.getElementsByClassName('plus');
             let minus = document.getElementsByClassName('minus');
 
