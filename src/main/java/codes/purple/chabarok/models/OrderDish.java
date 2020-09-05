@@ -17,5 +17,5 @@ public class OrderDish {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dishId")
     private Dish dish;
-    private Double amount;
+    private Long amount;
 }
