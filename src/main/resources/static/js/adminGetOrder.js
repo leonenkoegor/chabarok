@@ -17,8 +17,6 @@ function dateCorrected() {
         }
     }
 }
-
-
 let message = document.getElementById('message');
 let date = document.getElementById('date');
 let row = document.getElementById('row');
@@ -28,6 +26,7 @@ date.addEventListener('blur', function () {
     row.innerHTML = '';
     getOrder.sendRequest(function (xhr) {
         if(xhr["data"] === undefined || xhr["data"].length === 0 ){
+            console.log(xhr["data"]);
             message.style.display = 'block';
         }else {
             message.style.display = 'none';

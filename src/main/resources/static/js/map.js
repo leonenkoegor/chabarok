@@ -7,7 +7,7 @@ function initMap() {
 
     let map = new google.maps.Map(document.getElementById("map"), mapOptions);
     let info = new google.maps.InfoWindow({
-        content: '<h3 id="mapToastHeader">Ресторан чабарок</h3><p id="mapToastDesc">Мы ждём вас!</p>'
+        content: '<h3 style="color:black" id="mapToastHeader">Ресторан чабарок</h3><p style="color:black" id="mapToastDesc">Мы ждём вас!</p>'
     });
 
     let marker = new google.maps.Marker({
