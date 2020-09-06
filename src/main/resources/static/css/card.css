@@ -1,5 +1,4 @@
 .card-container{
-
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -7,18 +6,21 @@
 }
 .card{
     width: 33.33%;
-
+    height: 95vh;
     background-color: #000000;
+    position: relative;
 }
 .card2{
     background-color: #1C1C1C;
 }
 .card-img{
     background-image: url("/img/card.png");
-    height: 50vh;
+    height: 45vh;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
 }
 .card h3{
     font-family: 'Montserrat', sans-serif;
@@ -40,6 +42,8 @@
     padding-left: 6.8%;
     font-size: .96rem;
     width: 90%;
+    position: absolute;
+    bottom: 20px;
 }
 /*Значение веса*/
 .weight{
@@ -52,22 +56,34 @@
     width: 52%;
     font-size: .96rem;
     text-align: center;
-    padding: 22px 50px;
+    padding: 22px 0;
     border-radius: 10px;
     background-color: #E2002B;
-    margin: 50px auto;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.addToCartBtn:hover{
+    background-color: #F91E49;
+    cursor: pointer;
+}
+.booking-btn a{
+    display: block;
+    width: 100%;
+    height: inherit;
+}
+.booking-btn a:hover{
+    color: white;
 }
 @media (max-width:1366px) {
     .card{
         width: 50%;
-        height: max-content;
     }
-
 }
 @media (max-width:800px) {
     .card{
         width: 100%;
-        height: max-content;
     }
 
 }

@@ -37,7 +37,7 @@
 
 .bigLogo{
     margin: 14vh auto;
-    width: 30%;
+    width: 55%;
     height: 28vh;
     background-repeat: no-repeat;
     background-image: url("/img/logomax.png");
@@ -47,9 +47,11 @@
     margin: 0 auto;
     width: min-content;
     padding: 28px 64px;
+    margin-bottom: 15vh;
     border: 2px solid white;
     border-radius: 15px;
     font-size: 0.92rem;
+    transition: all .2s ease;
 }
 /*Наша история*/
 
@@ -77,6 +79,9 @@
     position: relative;
     border-top: 3px solid white;
     padding-bottom: 20vh;
+}
+article.booking{
+    height: min-content;
 }
 .elipse{
     z-index: 55;
@@ -119,6 +124,16 @@
     border-radius: 10px;
     max-width: 283px;
     margin: 160px auto;
+    transition: all .2s ease;
+}
+.menuLinkBtn a{
+    display: block;
+    width: 100%;
+    height: inherit;
+}
+.menuLinkBtn:hover{
+    cursor: pointer;
+    background-color: #A9A9A9;
 }
 
 .location-container{

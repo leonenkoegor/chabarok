@@ -24,7 +24,9 @@ getCategories.sendRequest(function (xhr) {
         for(let i = 0;i<categoryList.length;i++){
             let category = document.createElement('li');
             category.setAttribute('subId',categoryList[i]["id"]);
-            category.textContent = categoryList[i]["name"];
+            category.innerHTML = `
+                <a href="#menuFlag">${categoryList[i]["name"]}</a>
+            `
             if(categoryList[i]["mainCategoryName"] === 'Горячие блюда'){
                 menu1.append(category);
             }else if(categoryList[i]["mainCategoryName"] === 'Холодные закуски'){
@@ -45,25 +47,38 @@ getCategories.sendRequest(function (xhr) {
                         let url = `/menu/dishes/image/get?dishId=${foodList[i]["id"]}`;
                         card.setAttribute('subId',foodList[i]["id"]);
                         card.innerHTML = `
-                        <div class="card-img" style="background-image: url(${url});background-size: contain;"></div>
+                        <div class="card-img" style="background-image: url(${url});"></div>
                 <h3>${foodList[i]["name"]}
                 </h3> 
                 <p class="foodDescription">${foodList[i]["description"]}</p>
                 <div class="foodParamContainer">
-                    <div class="weight">${foodList[i]["weight"]}</div>
-                    <div class="price">${foodList[i]["cost"]}</div>
+                    <div class="weight">${foodList[i]["weight"]}г.</div>
+                    <div class="price">${foodList[i]["cost"]}р.</div>
                 </div>
             </div>
                   `    ;
+                        let icon = document.createElement('i');
+                        icon.className = 'fas fa-shopping-cart';
+                        icon.style.paddingLeft = '7px';
                         addToCartBtn.classList.add('addToCartBtn');
                             addToCartBtn.textContent = 'Добавить корзину';
+                            let isIssetToCart = getLocalStorage();
+                            if(isIssetToCart["list"].includes(card.getAttribute('subId'))){
+                                addToCartBtn.style.backgroundColor = '#39F927';
+                                addToCartBtn.textContent = 'В корзине';
+                                addToCartBtn.append(icon);
+                            }
                             addToCartBtn.addEventListener('click',function () {
                                let addToCart = getLocalStorage();
                                if(!addToCart["list"].includes(this.parentElement.getAttribute('subId'),0)){
                                    addToCart["list"].push(this.parentElement.getAttribute('subId'));
+                                   this.style.backgroundColor = '#39F927';
+                                   this.textContent = 'В корзине';
+                                   this.append(icon);
                                }
                                localStorage.setItem('cart',JSON.stringify(addToCart));
                             });
+
                             card.append(addToCartBtn);
                             cardContainer.append(card);
                         }

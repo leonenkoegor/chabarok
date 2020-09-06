@@ -70,6 +70,11 @@
 .left{
     margin-right: .7%;
 }
+@media (max-height: 768px) {
+    #map{
+        height: 86vh;
+    }
+}
 @media (max-width: 1700px) {
     .mainPhones{
         width:72%;
@@ -114,6 +119,9 @@
         justify-content: space-around;
         width: 100%;
     }
+    #map{
+        height: 81.5vh;
+    }
     h2{
         padding-bottom: 5vh;
     }
@@ -137,4 +145,17 @@
         justify-content: space-between;
     }
 
+}
+@media (max-width: 480px) {
+    #map{
+        height: 78.5vh;
+    }
+    .flex{
+        width: 98%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .mainLinks{
+        padding-top: 20px;
+    }
 }

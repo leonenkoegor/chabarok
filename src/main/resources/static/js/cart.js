@@ -6,23 +6,26 @@ let cardContainer = document.getElementById('cardContainer');
 let totalPrice = document.querySelector('#resultCost h2');
 let getData = JSON.parse(localStorage.getItem('cart'));
 let listArray = getData.list;
+let isDeliver = document.getElementById('deliverValue');
+let isPayByCard = document.getElementById('isPayByCard');
 let btnOrder = document.getElementById('btn');
 btnOrder.addEventListener('click', sendOrder);
 
    function sendOrder() {
+
        let dishContainer = document.getElementsByClassName('orderElem');
        console.log(dishContainer);
-       for (let i=0;i<dishContainer.length;i++){
-               dish+= dishContainer[i].getAttribute('subId')+'A'+dishContainer[i].querySelector('.count').textContent+'&';
+       for (let i=0;i<dishContainer.length-1;i++){
+               dish+=dishContainer[i].getAttribute('subId')+'A'+dishContainer[i].querySelector('.count').textContent+'&dishAndAmount=';
        }
-       dish = dish.substring(0, dish.length - 1);
+       dish+=dishContainer[dishContainer.length-1].getAttribute('subId')+'A'+dishContainer[dishContainer.length-1].querySelector('.count').textContent;
        let send = {
            'name':document.getElementById('name').value,
            'dishAndAmount':dish,
            'address':document.getElementById('address').value,
            'phoneNumber':document.getElementById('phoneNumber').value,
-           'isToDeliver':true,
-           'isToPayByCard':true,
+           'isToDeliver':isDeliver.style.color === 'black'? true:false,
+           'isToPayByCard':isPayByCard.style.color ==='black'? true:false,
        }
        let request = new Request('GET','/cart/dishes/order', send);
        request.sendRequest(function (xhr) {
@@ -30,32 +33,32 @@ btnOrder.addEventListener('click', sendOrder);
               console.log(xhr);
               localStorage.clear();
               message.style.display = 'block';
-              setTimeout(3000,function () {
-                message.style.display = 'none';
-              })
+              setTimeout(() => {
+                  message.style.display = 'none';
+              }, 5000)
            }else{
 
            }
        })
    }
 function plusFunc() {
-    let startPrice = parseFloat(this.parentElement.parentElement.getAttribute('price'));
+    let startPrice = parseFloat(this.parentElement.parentElement.parentElement.getAttribute('price'));
     totalPrice.textContent = (parseFloat(totalPrice.textContent) + startPrice).toFixed(2);
     let value = this.nextElementSibling.textContent;
     value++;
     this.nextElementSibling.textContent = value;
-    this.previousElementSibling.textContent = parseFloat(this.previousElementSibling.textContent) + startPrice;
+    this.parentElement.previousElementSibling.textContent = (parseFloat(this.parentElement.previousElementSibling.textContent) + startPrice).toFixed(2);
 
 }
 
 function minusFunc() {
-    let startPrice = parseFloat(this.parentElement.parentElement.getAttribute('price'));
+    let startPrice = parseFloat(this.parentElement.parentElement.parentElement.getAttribute('price'));
     let value = this.previousElementSibling.textContent;
     if (value != 1) {
         totalPrice.textContent = (parseFloat(totalPrice.textContent) - startPrice).toFixed(2);
         value--;
         this.previousElementSibling.textContent = value;
-        this.previousElementSibling.previousElementSibling.previousElementSibling.textContent = this.previousElementSibling.previousElementSibling.previousElementSibling.textContent - startPrice;
+        this.previousElementSibling.previousElementSibling.parentElement.previousElementSibling.textContent = (this.previousElementSibling.previousElementSibling.parentElement.previousElementSibling.textContent - startPrice).toFixed(2) ;
 
     }
 
@@ -75,10 +78,11 @@ request.sendRequest(function (xhr) {
 
         for (let i = 0; i < xhr["data"].length; i++) {
             count+= xhr["data"][i]["cost"];
-            totalPrice.textContent = count;
+            totalPrice.textContent = count.toFixed(2);
             let url = `/menu/dishes/image/get?dishId=${xhr["data"][i]["id"]}`;
             let card = document.createElement('div');
             card.className = 'card';
+
             card.innerHTML = `
                 <div class="card-img" style="background-image: url(${url})"></div>
                 <h3>${xhr["data"][i]["name"]}</h3>
@@ -97,8 +101,11 @@ request.sendRequest(function (xhr) {
                             <span class="name">${xhr["data"][i]["name"]}</span>
                         </div>
                         <div class="itemFlex">
-                            <div class="cost">${xhr["data"][i]["cost"]}</div><div class="plus">+</div><div class="count">1</div><div
+                            <div class="cost">${xhr["data"][i]["cost"]}</div>
+                            <div class="elemParam">
+                            <div class="plus">+</div><div class="count">1</div><div
                                 class="minus">-</div>
+                              </div>
                         </div>
                 `
             order.append(li);

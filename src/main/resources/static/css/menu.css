@@ -7,6 +7,7 @@
     z-index: 2;
 }
 
+
 .menuWrapper:before {
     content: '';
     position: absolute;
@@ -34,7 +35,9 @@
     font-weight: 100;
     font-size: 1rem;
 }
-
+.card .foodParamContainer{
+    bottom: 100px;
+}
 .subMenuContainer{
     padding-top: 4.6vh;
     width: 60%;
@@ -113,6 +116,13 @@ th {
     border-left:7px solid black;
     transform: rotate(-45deg);
 }
+.background-image{
+    background-size: cover;
+}
+#cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
 .left{
     padding-top: 295px;
     padding-left: 8%;
@@ -165,9 +175,26 @@ th {
     height: 70px;
     background-color: rgba(0,0,0,0);
 }
+
 #booking-container>div{
     width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+@media(max-width: 950px){
+    .menuBlock{
+        flex-wrap: wrap;
+    }
+    .subMenuContainer{
+        width: 100%;
+    }
+}
+@media(max-width: 520px){
+    .container{
+        width: 92%;
+    }
+    .subMenuContainer{
+        flex-wrap: wrap;
+    }
 }
