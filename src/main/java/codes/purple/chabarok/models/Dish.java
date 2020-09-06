@@ -21,6 +21,7 @@ public class Dish {
     private String description;
     private Double weight;
     private Double cost;
+    private Boolean allowToOrder;
     @ManyToMany(mappedBy = "dishes", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Category> categories;
@@ -32,6 +33,7 @@ public class Dish {
     public Dish(DishDTO dishDTO) {
         this.name = dishDTO.getName();
         this.description = dishDTO.getDescription();
+        this.allowToOrder = dishDTO.getAllowToOrder();
         this.weight = dishDTO.getWeight();
         this.cost = dishDTO.getCost();
     }

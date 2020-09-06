@@ -5,7 +5,9 @@ import codes.purple.chabarok.repositories.OrderDishRepository;
 import codes.purple.chabarok.repositories.OrderDishesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.DateUtils;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -21,8 +23,13 @@ public class OrderDishesService {
         return orderDishesRepository.findAll();
     }
 
-    public List<OrderDishes> findAllByDate(Date date) {
-        return orderDishesRepository.findAllByDate(date);
+    public List<OrderDishes> findAllByDate(Date from) {
+        Date till = (Date) from.clone();
+        Calendar c = Calendar.getInstance();
+        c.setTime(till);
+        c.add(Calendar.DATE, 1);
+        till = c.getTime();
+        return orderDishesRepository.findAllByDateBetween(from, till);
     }
 
     public void createOrder(OrderDishes orderDishes) {

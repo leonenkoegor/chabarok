@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface OrderDishesRepository extends JpaRepository<OrderDishes, Long> {
-    List<OrderDishes> findAllByDate(Date date);
+    List<OrderDishes> findAllByDateBetween(Date dateStart, Date dateEnd);
 }
