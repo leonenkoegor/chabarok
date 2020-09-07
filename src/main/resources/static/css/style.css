@@ -149,4 +149,24 @@ body{
         font-size: 14px;
     }
 }
+@media (max-width: 400px) {
+    h2{
+        padding-bottom: 30px;
+    }
+    .fa-bars{
+        padding: 0;
+    }
+    li.icon{
+        width: max-content;
+        height: max-content;
+        padding: 8px;
+    }
 
+
+}
+
+@media (max-height: 800px) {
+    h2{
+        padding-bottom: 60px;
+    }
+}

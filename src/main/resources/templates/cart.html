@@ -23,7 +23,7 @@
             <span><a href="tel:+375232555654">+375 232 555-654</a></span>
         </div>
     </div>
-    <div class="container nav-container">
+    <div class="nav-container" id="nav-container">
         <nav class="nav">
             <div class="logo">
                 <a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></li>
@@ -59,9 +59,9 @@
                     <div id="resultCost"><h2>0р.</h2></div>
                 </div>
                 <div class="form">
-                    <div><input value="Имя" type="text" id="name"></div>
-                    <div><input value="Адрес" type="text" id="address"></div>
-                    <div><input value="Телефон" type="text" id="phoneNumber"></div>
+                    <div><input value="Имя" type="text" id="name" name="Имя"></div>
+                    <div><input value="Адрес" type="text" id="address" name="Адрес"></div>
+                    <div><input value="Телефон" type="text" id="phoneNumber" name="Телефон"></div>
                     <div class="form_radio_group form_radio_group1">
 
                         <div class="form_radio_group-item">
@@ -101,6 +101,8 @@
 
                     </div>
                     <div id="btn">Заказать</div>
+                    <div id="errorMessage1">Для оформления заказа необходимо заполнить все поля!</div>
+                    <div id="errorMessage2">Для оформления заказа необходимо выбрать блюда в разделе меню!</div>
                     <div id="message">Заказ отправлен, ожидайте!</div>
                 </div>
             </div>
@@ -118,9 +120,9 @@
                 <p><a href="tel:+375232555654">+375 232 555-654</a></p>
             </div>
             <div class="links">
-                <p>Вконтакте</p>
-                <p>Instagram</p>
-                <p>Facebook</p>
+                <p><a href="https://vk.com/chabarok">Вконтакте</a></p>
+                <p><a href="https://www.instagram.com/chabarok_gomel/">Instagram</a></p>
+                <p><a href="https://www.facebook.com/chabarokgomel">Facebook</a></p>
             </div>
         </div>
         <div class="schedule">

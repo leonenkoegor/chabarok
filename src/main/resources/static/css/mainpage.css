@@ -38,15 +38,18 @@
 .bigLogo{
     margin: 14vh auto;
     width: 55%;
-    height: 28vh;
+    height: 40vh;
     background-repeat: no-repeat;
     background-image: url("/img/logomax.png");
     background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
 }
 .booking-btn {
     margin: 0 auto;
-    width: min-content;
-    padding: 28px 64px;
+    width: 30%;
+    text-align: center;
+    padding: 3.5vh 0 3.5vh 0;
     margin-bottom: 15vh;
     border: 2px solid white;
     border-radius: 15px;
@@ -260,13 +263,52 @@ th {
 .right{
     padding: 50px;
 }
-@media (max-width: 1366px) {
-    .right{
-        width: 70%;
+#message {
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+    color: #929293;
+    border: 1px solid #929293;
+    background-color: #FEFEFE;
+    border-radius: 5px;
+    display: none;
+    transition: all .2s ease;
+}
+#message2{
+    width: 60%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+    color: #7A7D7F;
+    border: 1px solid #7A7D7F;
+    background-color: #D6D8D9;
+    border-radius: 5px;
+    display: none;
+    transition: all .2s ease;
+}
+.card4{
+    display: none;
+}
 
+@media (max-width: 1580px) {
+    #backgroundContainer{
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
     }
-    #booking-container{
-        flex-direction: column;
+    .fieldWrapper,.calendarContainer{
+        width: 90%;
+    }
+}
+@media (max-width: 1366px) {
+    .card4{
+        display: block;
+    }
+    .events{
+        display: none;
+    }
+    .album{
+        margin-top: 20vh;
     }
     #booking-container p{
         padding-bottom: 40px;
@@ -278,13 +320,22 @@ th {
     h2{
         padding-bottom: 60px;
     }
-    .bigLogo{
-        height: 20vh;
-        margin: 80px auto;
-        background-size: contain;
+
+
+}
+@media (max-width: 900px) {
+    .story-content p{
+        width: 70%;
     }
-    .story{
-        padding-top:80px;
+}
+@media (max-width: 630px) {
+    .story-content p{
+        width: 80%;
+    }
+}
+@media (max-width: 400px) {
+    .story-content p{
+        width: 100%;
     }
 }
 /*****************************/
