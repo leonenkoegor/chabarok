@@ -15,6 +15,8 @@ public class ImageFile {
     private Long id;
     @OneToOne(mappedBy = "image")
     private Dish dish;
+    @OneToOne(mappedBy = "image")
+    private Event event;
     private String name;
     private String type;
     @Lob
