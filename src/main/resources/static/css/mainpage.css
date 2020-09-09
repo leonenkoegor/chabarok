@@ -57,12 +57,14 @@
     margin: 0 auto;
     width: 30%;
     text-align: center;
-    padding: 3.5vh 0 3.5vh 0;
     margin-bottom: 15vh;
     border: 2px solid white;
     border-radius: 15px;
     font-size: 0.92rem;
     transition: all .2s ease;
+}
+.booking-btn a{
+    padding: 3.4vh;
 }
 /*Наша история*/
 
