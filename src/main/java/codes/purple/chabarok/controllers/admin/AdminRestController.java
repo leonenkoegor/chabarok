@@ -7,6 +7,7 @@ import codes.purple.chabarok.dtos.CategoryDTO;
 import codes.purple.chabarok.dtos.DishDTO;
 import codes.purple.chabarok.dtos.UserDTO;
 import codes.purple.chabarok.models.Dish;
+import codes.purple.chabarok.models.Event;
 import codes.purple.chabarok.services.*;
 import codes.purple.chabarok.services.exceptions.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,9 @@ public class AdminRestController {
 
     @Autowired
     private OrderDishesService orderDishesService;
+
+    @Autowired
+    private EventService eventService;
 
     @GetMapping("/admin/create/user")
     public DefaultResponse createUser(UserDTO userDTO) {
@@ -89,5 +93,16 @@ public class AdminRestController {
     @GetMapping("/admin/ordered/tables/get")
     public DataResponse getOrderedTables(@RequestParam @DateTimeFormat(pattern = "dd/MM/yyyy") Date date) {
         return new DataResponse(Status.SUCCESS, "Odered tables by date", orderedTableService.getByDate(date));
+    }
+
+    @GetMapping("/admin/event/update")
+    public DefaultResponse updateEvent(Event event, @RequestParam MultipartFile image) {
+        eventService.updateEvent(event);
+        try {
+            eventService.saveImage(event.getId(), image);
+        } catch (IOException | EventNotFoundException e) {
+            return new DefaultResponse(Status.FAIL, "Event not updated");
+        }
+        return new DefaultResponse(Status.SUCCESS, "Event updated");
     }
 }
