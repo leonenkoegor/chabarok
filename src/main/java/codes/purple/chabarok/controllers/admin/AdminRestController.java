@@ -95,7 +95,7 @@ public class AdminRestController {
         return new DataResponse(Status.SUCCESS, "Odered tables by date", orderedTableService.getByDate(date));
     }
 
-    @GetMapping("/admin/event/update")
+    @PostMapping("/admin/event/update")
     public DefaultResponse updateEvent(Event event, @RequestParam MultipartFile imageFile) {
         eventService.updateEvent(event);
         try {
