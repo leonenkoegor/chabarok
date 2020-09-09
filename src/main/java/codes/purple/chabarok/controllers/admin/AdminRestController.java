@@ -96,10 +96,10 @@ public class AdminRestController {
     }
 
     @GetMapping("/admin/event/update")
-    public DefaultResponse updateEvent(Event event, @RequestParam MultipartFile image) {
+    public DefaultResponse updateEvent(Event event, @RequestParam MultipartFile imageFile) {
         eventService.updateEvent(event);
         try {
-            eventService.saveImage(event.getId(), image);
+            eventService.saveImage(event.getId(), imageFile);
         } catch (IOException | EventNotFoundException e) {
             return new DefaultResponse(Status.FAIL, "Event not updated");
         }
