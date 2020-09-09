@@ -105,4 +105,9 @@ public class AdminRestController {
         }
         return new DefaultResponse(Status.SUCCESS, "Event updated");
     }
+
+    @GetMapping("/admin/events/get")
+    public DataResponse getEvents() {
+        return new DataResponse(Status.SUCCESS, "Get all events", eventService.findAllEvent());
+    }
 }
