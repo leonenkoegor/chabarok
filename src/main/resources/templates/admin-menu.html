@@ -27,16 +27,25 @@
     </nav>
     <div class="card-group" style="padding: 10px;padding-left: 50px;padding-right: 50px;">
         <div class="card">
-            <form class="d-flex d-xl-flex flex-column justify-content-xl-center align-items-xl-center" action="/admin/menu/category/add" method="get">
-                <h4 class="text-center">Добавить категорию</h4><input class="form-control" type="text" placeholder="Название главной категории" name="mainCategoryName"><input class="form-control" type="text" placeholder="Название подкатегории" name="name"><button class="btn btn-primary d-md-flex justify-content-md-start align-items-md-start"
-                    type="submit">Добавить</button></form>
+            <form class="d-flex d-xl-flex flex-column justify-content-xl-center align-items-xl-center" action="/admin/menu/category/add">
+                <h4 class="text-center">Добавить категорию</h4>
+                <input class="form-control" type="text" placeholder="Название главной категории" name="mainCategoryName" id="mainCategoryName">
+                <input class="form-control" type="text" placeholder="Название подкатегории" name="name" id="subCategory">
+                <button class="btn btn-primary d-md-flex justify-content-md-start align-items-md-start"
+                    id="addSubCategory">Добавить</button></form>
         </div>
         <div class="card">
             <form class="d-flex flex-column justify-content-xl-center align-items-xl-center" action="/admin/menu/dish/add" method="post" enctype="multipart/form-data">
-                <h4 class="text-center">Добавить блюдо</h4><input class="form-control" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><select name="categoryId" id="select" class="form-control">
+                <h4 class="text-center">Добавить блюдо</h4>
+                <input class="form-control" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                <select name="categoryId" id="select" class="form-control">
 
                 <optgroup label="Подкатегория"></optgroup></select><input class="form-control" type="text" placeholder="Название"
-                    name="name"><input class="form-control" type="text" placeholder="Описание" name="description"><input class="form-control" type="text" placeholder="Вес" name="weight"><input class="form-control" type="text" placeholder="Стоимость" name="cost"><span>Фото:</span>
+                    name="name">
+                <input class="form-control" type="text" placeholder="Описание" name="description">
+                <input class="form-control" type="text" placeholder="Вес" name="weight">
+                <input class="form-control" type="text" placeholder="Стоимость" name="cost">
+                <span>Фото:</span>
                 <input
                     type="file" name="image"><button class="btn btn-primary d-md-flex justify-content-md-start align-items-md-start" type="submit">Добавить</button></form>
         </div>
