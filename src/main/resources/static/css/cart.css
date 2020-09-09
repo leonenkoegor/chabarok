@@ -9,6 +9,21 @@
 .foodParamContainer{
     bottom: 20px;
 }
+.deleteImg{
+    position: absolute;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    left: -25px;
+    z-index: 999;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    display: none;
+}
+.deleteImg:hover{
+    color: #7A7D7F;
+}
 #message{
     text-align: center;
     color: #4C8359;

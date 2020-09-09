@@ -32,7 +32,15 @@
     color: #1C1C1C;
 }
 /*---------------------------------------------*/
-
+.menuLinkBtn a[href="/menu"]{
+    display: block;
+    width: 100%;
+    height: inherit;
+    padding: 22px 50px;
+}
+.menuLinkBtn a[href="/menu"]:hover{
+    color: white;
+}
 /*------main---------*/
 
 .bigLogo{
@@ -40,7 +48,7 @@
     width: 55%;
     height: 40vh;
     background-repeat: no-repeat;
-    background-image: url("/img/logomax.png");
+    background-image: url("/img/ch.png");
     background-size: contain;
     background-position-x: center;
     background-position-y: center;
@@ -129,6 +137,9 @@ article.booking{
     margin: 160px auto;
     transition: all .2s ease;
 }
+.menu-peace .menuLinkBtn{
+    padding: 0;
+}
 .menuLinkBtn a{
     display: block;
     width: 100%;
@@ -204,7 +215,7 @@ article.booking{
 /***************/
 .album{
     width: 100%;
-    height: 70vh;
+    height: 90vh;
     background-image: url("/img/album.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -263,6 +274,9 @@ th {
 .right{
     padding: 50px;
 }
+.card3{
+    background-color: black;
+}
 #message {
     width: 50%;
     text-align: center;
@@ -304,6 +318,10 @@ th {
     .card4{
         display: block;
     }
+    #card3{
+        background-color: #1C1C1C;
+    }
+
     .events{
         display: none;
     }
@@ -327,7 +345,23 @@ th {
     .story-content p{
         width: 70%;
     }
+    .album-container{
+        right: 5%;
+    }
 }
+@media (max-width: 720px) {
+    .album-container{
+        right: 0;
+        left: 20px;
+
+    }
+
+    .album-container p{
+        padding-left: 40px;
+        width: 80%;
+    }
+}
+
 @media (max-width: 630px) {
     .story-content p{
         width: 80%;
