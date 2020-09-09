@@ -16,6 +16,11 @@ public class AdminController {
         return "admin-menu";
     }
 
+    @GetMapping("/admin/events")
+    public String adminEventsPage() {
+        return "admin-events";
+    }
+
 
     @GetMapping("/admin/booking")
     public String adminBookingPage() {
