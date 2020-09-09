@@ -19,17 +19,17 @@
         <div class="location"><span><img th:src="@{/img/ic_place_24px.png}" alt="location">Гомель, Черниговское шоссе 9-й км.</span>
         </div>
         <div class="phones">
-            <span>+ 375 232 37 84 00</span>
-            <span>+ 375 44 722 26 54 </span>
+            <span><a href="tel:+375447222654">+ 375 44 722 26 54</a></span>
+            <span><a href="tel:+375232555654">+375 232 555-654</a></span>
         </div>
     </div>
-    <div class="container nav-container">
+    <div class="nav-container" id="nav-container">
         <nav class="nav">
             <div class="logo">
-                <li><a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></li>
+                <a th:href="@{/}" style="display: block;width: 100%;height: 100%;cursor: pointer"></a></li>
             </div>
             <ul class="nav-menu close" id="nav">
-                <li class="icon" id="icon"><a href="javascript:void(0);" style="font-size: 30px">&#9776</a></li>
+                <li class="icon" id="icon"><i class="fas fa-bars"></i></li>
                 <li class="ft link"><a href="/">Главная</a></li>
                 <li class="ft link"><a href="/menu">Меню</a></li>
                 <li class="ft link"><a href="/booking">Забронировать</a></li>
@@ -56,13 +56,53 @@
                 </ul>
                 <div class="result">
                     <div><h2 id="totalPrice">К оплате</h2></div>
-                    <div id="resultCost"><h2>55</h2></div>
+                    <div id="resultCost"><h2>0р.</h2></div>
                 </div>
                 <div class="form">
-                    <div><input value="Имя" type="text" id="name"></div>
-                    <div><input value="Адрес" type="text" id="address"></div>
-                    <div><input value="Телефон" type="text" id="phoneNumber"></div>
+                    <div><input value="Имя" type="text" id="name" name="Имя"></div>
+                    <div><input value="Адрес" type="text" id="address" name="Адрес"></div>
+                    <div><input value="Телефон" type="text" id="phoneNumber" name="Телефон"></div>
+                    <div class="form_radio_group form_radio_group1">
+
+                        <div class="form_radio_group-item">
+
+                            <input id="radio-1" type="radio" name="IsDeliver" value="false" checked>
+
+                            <label for="radio-1">Самовывоз</label>
+
+                        </div>
+
+                        <div class="form_radio_group-item">
+
+                            <input id="radio-2" type="radio" name="IsDeliver" value="true" checked>
+
+                            <label id="deliverValue" for="radio-2">Доставка</label>
+
+                        </div>
+
+                    </div>
+                    <div class="form_radio_group form_radio_group2">
+
+                        <div class="form_radio_group-item">
+
+                            <input id="radio-3" type="radio" name="pay" value="false" checked>
+
+                            <label for="radio-3">Наличными</label>
+
+                        </div>
+
+                        <div class="form_radio_group-item">
+
+                            <input id="radio-4" type="radio" name="pay" value="true" checked>
+
+                            <label id="isPayByCard" value="true" for="radio-4">Картой</label>
+
+                        </div>
+
+                    </div>
                     <div id="btn">Заказать</div>
+                    <div id="errorMessage1">Для оформления заказа необходимо заполнить все поля!</div>
+                    <div id="errorMessage2">Для оформления заказа необходимо выбрать блюда в разделе меню!</div>
                     <div id="message">Заказ отправлен, ожидайте!</div>
                 </div>
             </div>
@@ -76,13 +116,13 @@
             <div><h4>Контакты</h4></div>
             <div class="footer-contacts">
                 <p>Гомель, Черниговское шоссе 9-й км.</p>
-                <p>+ 375 44 722 26 54</p>
-                <p>+ 375 232 37 84 00</p>
+                <p><a href="tel:+375447222654">+ 375 44 722 26 54</a></p>
+                <p><a href="tel:+375232555654">+375 232 555-654</a></p>
             </div>
             <div class="links">
-                <p>Вконтакте</p>
-                <p>Instagram</p>
-                <p>Facebook</p>
+                <p><a href="https://vk.com/chabarok">Вконтакте</a></p>
+                <p><a href="https://www.instagram.com/chabarok_gomel/">Instagram</a></p>
+                <p><a href="https://www.facebook.com/chabarokgomel">Facebook</a></p>
             </div>
         </div>
         <div class="schedule">
@@ -93,6 +133,7 @@
     </div>
 </footer>
 <script th:src="@{/js/cart.js}" type="module"></script>
-<script th:src="@{/js/adaptiveMenu.js}" ></script>
+<script th:src="@{/js/adaptiveMenu.js}"></script>
+<script src="https://kit.fontawesome.com/e23145cd32.js" crossorigin="anonymous"></script>
 </body>
 </html>

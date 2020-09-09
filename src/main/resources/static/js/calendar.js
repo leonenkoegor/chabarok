@@ -172,6 +172,8 @@ let message = document.getElementById('message');
 let fromTime = document.getElementById('fromTime');
 let toTime = document.getElementById('toTime');
 function booking(){
+    let name = document.getElementById('firstNameAndSecondName');
+    let phoneNumber =document.getElementById('phoneNumber') ;
     if(fromTime.value.charAt(0)==='0'){
         fromTime.value = fromTime.value.substring(1);
     }
@@ -189,19 +191,26 @@ function booking(){
         'orderedFromTime':fromTime.value,
         'orderedToTime':toTime.value,
         'peoples':document.getElementById('guestsCount').value,
-         'name':document.getElementById('firstNameAndSecondName').value,
-         'phoneNumber':document.getElementById('phoneNumber').value,
+         'name':name.value,
+         'phoneNumber':phoneNumber.value,
      }
+    if(name.value === ''||phoneNumber.value ===''){
+        let message = document.getElementById('message2');
+        message.style.display = 'block';
+        setTimeout(function () {
+            message.style.display = 'none';
+        },6000);
+    }else {
+        let request = new Request('GET', '/ordered/table/add', send);
+        request.sendRequest(function (xhr) {
+            message.style.display = 'block';
+            message.textContent = 'Заявка на бронь успешно принята!';
+            setTimeout(function () {
+                message.style.display = 'none';
+            }, 3000)
 
-     let request = new Request('GET','/ordered/table/add', send);
-     request.sendRequest(function (xhr) {
-         message.style.display = 'block';
-         message.textContent = 'Заявка на бронь успешно принята!';
-         setTimeout(function () {
-             message.style.display = 'none';
-         },3000)
-
-     })
+        })
+    }
  }
 
  let searchTable = document.getElementById('searchTable');

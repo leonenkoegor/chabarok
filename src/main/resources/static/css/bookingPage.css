@@ -23,7 +23,7 @@ h2 {
     text-align: center;
 }
 
-p {
+.fieldWrapper p {
     font-size: 0.7rem;
     letter-spacing: 1.4px;
     color: #787778;
@@ -83,6 +83,7 @@ p {
 #searchTable:hover {
     background-color: white;
     color: black;
+    cursor: pointer;
 }
 
 #searchTable:active {
@@ -93,13 +94,26 @@ p {
 #message {
     width: 50%;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     margin: 10px auto;
-    background-color: black;
+    color: #929293;
+    border: 1px solid #929293;
+    background-color: #FEFEFE;
     border-radius: 5px;
     display: none;
     transition: all .2s ease;
-
+}
+#message2{
+    width: 60%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+    color: #7A7D7F;
+    border: 1px solid #7A7D7F;
+    background-color: #D6D8D9;
+    border-radius: 5px;
+    display: none;
+    transition: all .2s ease;
 }
 
 @media (max-width: 1750px) {
@@ -162,6 +176,7 @@ p {
     #searchTable {
         margin: 2vh auto;
     }
+
 
     @media (max-width: 1750px) {
         .booking {
@@ -236,6 +251,7 @@ p {
     }
 }
 
+
 @media (max-width: 360px) {
     .fieldWrapper {
         width: 80%;
@@ -250,4 +266,27 @@ p {
         transition: all .2s step-start;
     }
 
+}
+@media(max-height: 800px){
+    .booking{
+        padding-top: 5vh;
+    }
+
+    #searchTable{
+        margin: 1vh auto;
+        padding: 15px;
+    }
+}
+@media (max-height: 700px) {
+    .booking{
+        min-height: 150vh;
+    }
+}
+@media (max-height: 480px) {
+    h2{
+        margin-top: 20px;
+    }
+    #firstNameAndSecondName,#phoneNumber,#guestsCount{
+        min-height: 8vh;
+    }
 }

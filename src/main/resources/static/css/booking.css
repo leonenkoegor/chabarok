@@ -1,5 +1,7 @@
 
-
+.fieldWrapper p{
+    text-align: start;
+}
 .booking{
     padding-top: 10vh;
     height: 95vh;
@@ -15,7 +17,7 @@
     outline: none;
     padding-left: 2%;
     border-radius: 10px;
-    height: 5.5vh;
+    height: 8vh;
     border: 2px solid white;
     color: white;
     font-size: 1rem;
@@ -63,6 +65,23 @@
     transition: all .2s ease;
 
 }
+@media (max-width: 1580px) {
+    .calendarContainer{
+        margin-bottom: 20px;
+    }
+    .fieldWrapper input{
+        min-height: 4vh;
+    }
+    #booking-container{
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+
+    }
+    .fieldWrapper,.calendarContainer{
+        width: 100%;
+        text-align: center;
+    }
+}
 
 @media (max-width: 1750px) {
     .booking{
@@ -73,16 +92,41 @@
     .booking{
         width: 65%;
     }
+    #searchTable{
+        width: 50%;
+    }
 }
 @media (max-width: 850px) {
     .booking{
         width: 80%;
     }
-}
-@media (max-width: 600px) {
-    .booking{
-        width: 90%;
+    .booking-peace{
+        flex-direction: column;
     }
+    .left,.right{
+        width: 100%;
+    }
+    .left{
+        padding-top: 100px;
+    }
+    .booking-content{
+        padding-bottom: 100px;
+    }
+    .fieldWrapper{
+        width: 100%;
+        padding: 10px 25%;
+
+        text-align: center;
+    }
+    .fieldWrapper input{
+        min-height: 7vh;
+    }
+}
+
+@media (max-width: 600px) {
+   .fieldWrapper{
+       padding: 10px 15%;
+   }
 }
 @media (max-width: 550px) {
     h2{
@@ -90,34 +134,17 @@
         padding-bottom: 20px;
     }
 }
-@media (max-width: 480px) {
-    .booking{
-        width: 100%;
-        padding-top: 5vh;
-    }
-    h2{
-        font-size: 1.7rem;
-    }
-    .fieldWrapper{
-        width: 60%;
-        margin-top: 10px;
-    }
-    #booking-container{
-        width: 100%;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .textInput{
-        width: 100%;
-    }
+
     #searchTable{
         margin: 2vh auto;
     }
-}
-@media (max-width: 360px) {
+
+@media (max-width: 460px) {
     .fieldWrapper{
-        width: 80%;
+        padding: 10px 10%;
+    }
+    .booking-btn{
+        width: 50%;
     }
     #searchTable{
 
@@ -128,4 +155,17 @@
         transition: all .2s step-start;
     }
 
+}
+@media (max-width: 360px) {
+    .right{
+        width: 100%;
+        padding: 10px;
+    }
+    #booking-container{
+        width: 100%;
+    }
+    .fieldWrapper {
+        width: 100%;
+        padding: 5px 0;
+    }
 }

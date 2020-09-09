@@ -1,4 +1,6 @@
-
+main{
+    height: inherit;
+}
 .contentWrapper{
     background-image: url("/img/album.png");
     background-size: cover;
@@ -6,8 +8,9 @@
     background-position-y: center;
     position: relative;
     z-index: 2;
-    height: 128vh;
+    height: inherit;
 }
+
 .contentWrapper:before{
     content: '';
     position: absolute;
@@ -37,7 +40,7 @@
 }
 #map{
     width: 50%;
-    height: 92vh;
+    height: inherit;
 }
 .mainPhones,#location{
     font-size: .92rem;
@@ -69,6 +72,11 @@
 }
 .left{
     margin-right: .7%;
+}
+@media (max-height: 768px) {
+    #map{
+        height: 86vh;
+    }
 }
 @media (max-width: 1700px) {
     .mainPhones{
@@ -114,6 +122,9 @@
         justify-content: space-around;
         width: 100%;
     }
+    #map{
+        height: 81.5vh;
+    }
     h2{
         padding-bottom: 5vh;
     }
@@ -136,5 +147,30 @@
     .mainPhones{
         justify-content: space-between;
     }
+@media (max-height: 700px) {
+    .flex .mainLinks{
+        padding-top:20px;
+    }
 
+}
+}
+@media (max-width: 480px) {
+    #map{
+        height: 78.5vh;
+    }
+    .flex{
+        width: 98%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    #location,.mainPhones{
+        font-size: 11px;
+    }
+
+
+}
+@media (max-height: 800px) {
+    .mainLinks{
+        padding-top: 30vh;
+    }
 }
