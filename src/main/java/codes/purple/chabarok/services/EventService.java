@@ -36,10 +36,8 @@ public class EventService {
     public void saveImage(Long eventId, MultipartFile image) throws IOException, EventNotFoundException {
         Event event = findById(eventId);
         ImageFile eventImage = event.getImage();
-        if(eventImage == null) {
-            eventImage = new ImageFile();
-            event.setImage(eventImage);
-        }
+        eventImage = new ImageFile();
+        event.setImage(eventImage);
         eventImage.setName(image.getName());
         eventImage.setType(image.getContentType());
         eventImage.setData(image.getBytes());

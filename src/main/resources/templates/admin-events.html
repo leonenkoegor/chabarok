@@ -34,6 +34,7 @@
 <div class="card"><img class="card-img-top w-100 d-block">
     <div class="card-body d-flex flex-column">
         <h2>Событие 1</h2>
+        <input type="hidden" name="id" value="1">
         <h4 class="card-title">В широком экране слева, в мобильной версии сверху</h4>
         <p class="card-text">Описание</p>
         <div class="mb-3">
@@ -52,6 +53,7 @@
     <div class="card"><img class="card-img-top w-100 d-block">
         <div class="card-body d-flex flex-column">
             <h2>Событие 2</h2>
+            <input type="hidden" name="id" value="2">
             <h4 class="card-title">Во всех расширениях центральная карточка</h4>
             <p class="card-text">Описание</p>
             <input class="form-control" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
@@ -68,6 +70,7 @@
 </form>
 <form  action="/admin/event/update" method="post" enctype="multipart/form-data">
     <div class="card"><img class="card-img-top w-100 d-block">
+        <input type="hidden" name="id" value="3">
         <input class="form-control" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
         <div class="card-body d-flex flex-column">
             <h2>Событие 3</h2>
