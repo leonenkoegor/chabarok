@@ -188,6 +188,10 @@ article.booking{
     display: flex;
 }
 .photo{
+    background-position-y: center;
+    background-position-x:center ;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 480px;
 }
 .photo:not(.center){
@@ -323,9 +327,11 @@ th {
     #card3{
         background-color: #1C1C1C;
     }
-
-    .events{
-        display: none;
+    .event-content{
+        width: 100%;
+    }
+    .photos-container{
+        flex-direction: column;
     }
     .album{
         margin-top: 20vh;
@@ -340,7 +346,9 @@ th {
     h2{
         padding-bottom: 60px;
     }
-
+    .fieldWrapper p{
+        padding-left: 10%;
+    }
 
 }
 @media (max-width: 900px) {
