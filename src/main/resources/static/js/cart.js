@@ -152,7 +152,7 @@ list = list.substring(0, list.length - 1);
                      isDeliver:arr.isDeliver
                  }
                  localStorage.setItem('cart',JSON.stringify(data));
-                 totalPrice.textContent = parseFloat(parseFloat(totalPrice.textContent)-this.parentElement.querySelector('.cost').textContent);
+                 totalPrice.textContent = (parseFloat(parseFloat(totalPrice.textContent)-this.parentElement.querySelector('.cost').textContent)).toFixed(2);
                  this.parentElement.style.display = 'none';
              })
              li.innerHTML = `

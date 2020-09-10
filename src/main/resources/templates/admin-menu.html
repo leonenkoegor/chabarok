@@ -30,7 +30,15 @@
         <div class="card">
             <form class="d-flex d-xl-flex flex-column justify-content-xl-center align-items-xl-center" action="/admin/menu/category/add">
                 <h4 class="text-center">Добавить категорию</h4>
-                <input class="form-control" type="text" placeholder="Название главной категории" name="mainCategoryName" id="mainCategoryName">
+
+                <select name="mainCategoryName" id="mainCategoryName" class="form-control" placeholder="Название главной категории">
+
+                    <optgroup label="Главная категория"></optgroup>
+                    <option value="Горячие блюда">Горячие блюда</option>
+                    <option value="Холодные блюда">Холодные блюда</option>
+                    <option value="Напитки">Напитки</option>
+                    <option value="Десерты">Десерты</option>
+                </select>
                 <input class="form-control" type="text" placeholder="Название подкатегории" name="name" id="subCategory">
                 <button class="btn btn-primary d-md-flex justify-content-md-start align-items-md-start"
                     id="addSubCategory">Добавить</button></form>
