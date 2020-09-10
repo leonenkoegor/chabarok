@@ -9,10 +9,7 @@ import codes.purple.chabarok.models.Dish;
 import codes.purple.chabarok.models.OrderDish;
 import codes.purple.chabarok.models.OrderDishes;
 import codes.purple.chabarok.models.OrderedTable;
-import codes.purple.chabarok.services.CategoryService;
-import codes.purple.chabarok.services.DishService;
-import codes.purple.chabarok.services.OrderDishesService;
-import codes.purple.chabarok.services.OrderedTableService;
+import codes.purple.chabarok.services.*;
 import codes.purple.chabarok.services.exceptions.CategoryNotFoundException;
 import codes.purple.chabarok.services.exceptions.DishNotFoundException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -44,6 +41,9 @@ public class GuestRestController {
 
     @Autowired
     private OrderDishesService orderDishesService;
+
+    @Autowired
+    private EventService eventService;
 
     @Autowired
     private TelegramBot telegramBot;
@@ -140,5 +140,10 @@ public class GuestRestController {
         } catch (DishNotFoundException e) {
             return new DefaultResponse(Status.FAIL, "Dish order is not created");
         }
+    }
+
+    @GetMapping("/events/get")
+    public DataResponse getEvents() {
+        return new DataResponse(Status.SUCCESS, "Get all events", eventService.findAllEvent());
     }
 }
