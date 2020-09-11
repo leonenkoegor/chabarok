@@ -130,4 +130,14 @@ public class AdminRestController {
     public DataResponse getEvents() {
         return new DataResponse(Status.SUCCESS, "Get all events", eventService.findAllEvent());
     }
+
+    @PostMapping("/admin/menu/dish/updateImage")
+    public DefaultResponse updateDishImage(@RequestParam MultipartFile image, @RequestParam Long dishId) throws DishNotFoundException {
+        try {
+            dishService.saveImage(dishId, image);
+            return new DefaultResponse(Status.SUCCESS, "Dish image updated!");
+        } catch (IOException e) {
+            return new DefaultResponse(Status.FAIL, "Dish image not updated!");
+        }
+    }
 }
