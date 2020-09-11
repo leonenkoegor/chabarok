@@ -7,21 +7,27 @@
     <title>Chabarok</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <meta th:name="_csrf" th:content="${_csrf.token}"/>
+    <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
 </head>
 <style>
     .card-group > .card {
     !important flex: none;
     }
-    .card p input,.card p textarea{
+
+    .card p input, .card p textarea {
         width: 50%;
     }
-    .card p textarea{
+
+    .card p textarea {
         min-height: 10vh;
     }
-    .card .d-flex{
+
+    .card .d-flex {
         padding: 20px;
     }
-    .card .d-flex input,.card .d-flex select{
+
+    .card .d-flex input, .card .d-flex select {
         margin: 10px;
     }
 </style>
@@ -91,27 +97,13 @@
     </div>
 </div>
 <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 80%;margin:50px auto"><span>Подкатегория:</span><select
-      name="categoryId"  id="select2" class="form-control" >
+        name="categoryId" id="select2" class="form-control">
     <optgroup label="Подкатегория"></optgroup>
 </select>
     <button class="btn btn-primary" type="button" id="search">Поиск!</button>
 </div>
 <!--  /admin/menu/dish/update&/admin/menu/dish/toggle   -->
-<div style="padding-top: 50px;display: flex;justify-content: space-between;flex-wrap: wrap;width: 100%">
-    <form action="" method="post" style="width: 100%">
-        <div class="card" style="width: 50%"><img class="card-img-top w-200 d-block">
-            <div class="card-body d-flex flex-column">
-                <p class="card-text"><input name="name" placeholder="Название" type="text"><p>
-                <p class="card-text"><textarea name="description" placeholder="Описание" type="text"></textarea></p>
-                <p class="card-text"><input name="weight" placeholder="Вес" type="text"></p>
-                <p class="card-text"><input name="cost" placeholder="Стоимость" type="text"></p>
-                <input class="form-control" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
-                <button class="btn btn-secondary" id="dishDeleteBtn" type="submit" style="margin-bottom: 6px;">Удалить</button>
-                <button class="btn btn-primary" id="dishUpdateBtn" type="submit">Обновить</button>
-            </div>
-        </div>
-    </form>
-
+<div id="dishCards" style="padding-top: 50px;display: flex;justify-content: space-between;flex-wrap: wrap;width: 100%">
 </div>
 <script th:src="@{/js/adminMenu.js}" type="module"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
