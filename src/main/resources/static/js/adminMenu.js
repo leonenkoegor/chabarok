@@ -76,7 +76,7 @@ function addDishToDishCard(dish) {
     dishCard.className = 'card';
     dishCard.styleName = 'width: 50%';
     dishCard.innerHTML = `
-    <img src="/menu/dishes/image/get?dishId=${dish['id']}" class="card-img-top w-200 d-block">
+    <img src="/menu/dishes/image/get?dishId=${dish['id']}" class="card-img-top w-100 d-block">
     <div class="card-body d-flex flex-column">
         <p class="card-text"><input name="name" placeholder="Название" type="text" value="${dish['name']}"><p>
         <p class="card-text"><textarea name="description" placeholder="Описание" type="text">${dish['description']}</textarea></p>
