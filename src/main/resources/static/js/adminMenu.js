@@ -74,7 +74,7 @@ function clearDishCards() {
 function addDishToDishCard(dish) {
     let dishCard = document.createElement('div');
     dishCard.className = 'card';
-    dishCard.styleName = 'width: 50%';
+    dishCard.styleName = 'width: 200px';
     dishCard.innerHTML = `
     <img src="/menu/dishes/image/get?dishId=${dish['id']}" class="card-img-top w-100 d-block">
     <div class="card-body d-flex flex-column">
