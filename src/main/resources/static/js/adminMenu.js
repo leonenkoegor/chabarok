@@ -3,8 +3,23 @@ let select = document.getElementById('select');
 let select2 = document.getElementById('select2');
 let getCategories = new Request('GET','/menu/categories/get');
 let addSubCategory = document.getElementById('addSubCategory');
+let search = document.getElementById('search');
 addSubCategory.addEventListener('click',sendRequestForAddSubCategory);
-
+search.addEventListener('click',getDishes);
+console.log(select2.value);
+select2.addEventListener('change', function() {
+    let n = this.options.selectedIndex;
+    let val = this.options[n].value;
+    this.value = val;
+})
+function getDishes() {
+    let request = new Request('GET','/menu/dishes/get?categoryId='+select2.getAttribute('value'));
+    request.sendRequest(function (xhr) {
+        if (xhr.status === 'SUCCESS') {
+            console.log(xhr);
+        }
+    })
+}
 function sendRequestForAddSubCategory() {
     let send = {
         'mainCategoryName':document.getElementById('mainCategoryName'),
@@ -18,7 +33,6 @@ function sendRequestForAddSubCategory() {
     })
 }
 getCategories.sendRequest(function (xhr) {
-    console.log(xhr);
     let categoryList = xhr.data;
     for(let i = 0;i<categoryList.length;i++){
         let category = document.createElement('option');
