@@ -17,7 +17,7 @@ setInterval(function () {
                 order.className = 'col-md-4';
                 order.innerHTML = `
             <div class="card">
-             <div class="card-body border rounded-0">
+            <div class="card-body border rounded-0">
             <h5 class="text-left card-title">Заказ № ${xhr["data"][i]["id"]}</h5>
             <h5 class="text-left card-title">Фамилия и имя: ${xhr["data"][i]["name"]}</h5>
             <h5 class="text-left card-title">Номер телефона: ${xhr["data"][i]["phoneNumber"]}</h5>
