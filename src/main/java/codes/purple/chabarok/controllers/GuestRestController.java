@@ -22,10 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @RestController
 public class GuestRestController {
@@ -84,7 +81,14 @@ public class GuestRestController {
     @GetMapping("/menu/dishes/get")
     public DataResponse getDishesFromCategory(@RequestParam Long categoryId) {
         try {
-            return new DataResponse(Status.SUCCESS, "All dishes from category!", categoryService.findById(categoryId).getDishes());
+            Set<Dish> dishes = categoryService.findById(categoryId).getDishes();
+            Set<Dish> enabledDishes = new LinkedHashSet<>();
+            dishes.forEach(dish -> {
+                if(dish.getEnabled()) {
+                    enabledDishes.add(dish);
+                }
+            });
+            return new DataResponse(Status.SUCCESS, "All dishes from category!", enabledDishes);
         } catch (CategoryNotFoundException e) {
             return new DataResponse(Status.FAIL, "Category not found!", null);
         }

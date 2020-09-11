@@ -85,6 +85,26 @@ public class AdminRestController {
         }
     }
 
+    @PostMapping("/admin/menu/dish/toggle")
+    public DefaultResponse disableDish(@RequestParam Long dishId) {
+        try {
+            dishService.toggleDish(dishId);
+            return new DefaultResponse(Status.SUCCESS, "Dish toggled");
+        } catch (DishNotFoundException e) {
+            return new DefaultResponse(Status.FAIL, "Dish not toggled");
+        }
+    }
+
+    @PostMapping("/admin/menu/dish/update")
+    public DefaultResponse updateDish(@RequestParam Long dishId, DishDTO dishDTO) {
+        try {
+            dishService.updateDish(dishId, dishDTO);
+            return new DefaultResponse(Status.SUCCESS, "Dish updated");
+        } catch (DishNotFoundException e) {
+            return new DefaultResponse(Status.FAIL, "Dish not updated");
+        }
+    }
+
     @GetMapping("/admin/orders/get")
     public DataResponse getOrders(@RequestParam @DateTimeFormat(pattern = "dd/MM/yyyy") Date date) {
         return new DataResponse(Status.SUCCESS, "Orders by date", orderDishesService.findAllByDate(date));
