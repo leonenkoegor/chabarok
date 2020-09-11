@@ -79,14 +79,14 @@
             <div id="booking-container">
                 <div class="fieldWrapper">
                     <input class="textInput" placeholder="Фамилия и имя" id="firstNameAndSecondName" type="text">
-                    <p>*Выберите дату вашего празднования</p>
+                    <p>*Укажите вашу фамилию и имя</p>
                     <input class="textInput" placeholder="Номер телефона" id="phoneNumber" type="text">
-                    <p>*Выберите дату вашего празднования</p>
+                    <p>*Укажите ваш номер телефона</p>
                     <input class="textInput" placeholder="Количество гостей" id="guestsCount" type="text">
                     <p>*Выберите количество ваших гостей</p>
                     <div>Время : <input maxlength="5" type="text" placeholder="00:00" id="fromTime">
                         до <input maxlength="5" id="toTime" placeholder="00:00" type="text"></div>
-                    <p>*Выберите количество ваших гостей</p>
+                    <p>*Выберите время бронирования</p>
                 </div>
                 <div class="calendarContainer">
                     <div align=center>
@@ -165,7 +165,7 @@
     </article>
     <article class="events">
         <div><h2>Последние события</h2></div>
-        <div class="photos-container">
+        <div class="photos-container" id="events">
             <div class="event-content">
                 <div class="photo start"></div>
                 <p class="photo-desc">Долгожданное открытие <br>
@@ -219,6 +219,7 @@
 <script th:src="@{/js/map.js}"></script>
 <script th:src="@{/js/adaptiveMenu.js}"></script>
 <script th:src="@{/js/calendar.js}"></script>
+<script th:src="@{/js/main.js}" type="module"></script>
 <script src="https://kit.fontawesome.com/e23145cd32.js" crossorigin="anonymous"></script>
 <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwRwmB9UWvRy9nmZiUerlAZpS23pOD-gU&callback=initMap&libraries=&v=weekly"

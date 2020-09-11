@@ -117,8 +117,8 @@ public class AdminRestController {
 
     @PostMapping("/admin/event/update")
     public DefaultResponse updateEvent(Event event, @RequestParam MultipartFile imageFile) {
-        eventService.updateEvent(event);
         try {
+            eventService.updateEvent(event);
             eventService.saveImage(event.getId(), imageFile);
         } catch (IOException | EventNotFoundException e) {
             return new DefaultResponse(Status.FAIL, "Event not updated");

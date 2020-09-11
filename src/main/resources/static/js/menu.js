@@ -2,6 +2,7 @@ import Request from "./Request.js"
 let menu1 = document.getElementById('hotFood');
 let menu2 = document.getElementById('coldFood');
 let menu3 = document.getElementById('drinks');
+let menu4 = document.getElementById('desert');
 let cardContainer = document.getElementById('cardContainer');
 let getCategories = new Request('GET','/menu/categories/get');
 
@@ -21,6 +22,7 @@ function getLocalStorage() {
 
 getCategories.sendRequest(function (xhr) {
         let categoryList = xhr.data;
+
         for(let i = 0;i<categoryList.length;i++){
             let category = document.createElement('li');
             category.setAttribute('subId',categoryList[i]["id"]);
@@ -29,12 +31,15 @@ getCategories.sendRequest(function (xhr) {
             `
             if(categoryList[i]["mainCategoryName"] === 'Горячие блюда'){
                 menu1.append(category);
-            }else if(categoryList[i]["mainCategoryName"] === 'Холодные закуски'){
+            }else if(categoryList[i]["mainCategoryName"] === 'Холодные блюда'){
                 menu2.append(category);
-            }else{
+            }else if(categoryList[i]["mainCategoryName"] === 'Напитки'){
                 menu3.append(category);
+            }else if(categoryList[i]["mainCategoryName"] === 'Десерты'){
+                menu4.append(category);
             }
             category.addEventListener('click',function () {
+                cardContainer.innerHTML = '';
                 let request = new Request('GET','/menu/dishes/get?categoryId='+category.getAttribute('subId'));
                 request.sendRequest(function (xhr) {
                     if(xhr.status ==='SUCCESS'){
