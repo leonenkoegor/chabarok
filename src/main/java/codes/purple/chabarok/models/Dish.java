@@ -21,6 +21,7 @@ public class Dish {
     private String description;
     private Double weight;
     private Double cost;
+    private Boolean enabled;
     private Boolean allowToOrder;
     @ManyToMany(mappedBy = "dishes", fetch = FetchType.LAZY)
     @JsonIgnore
@@ -36,6 +37,7 @@ public class Dish {
         this.allowToOrder = dishDTO.getAllowToOrder();
         this.weight = dishDTO.getWeight();
         this.cost = dishDTO.getCost();
+        this.enabled = true;
     }
 
     @Tolerate

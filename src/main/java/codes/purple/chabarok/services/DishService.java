@@ -38,8 +38,30 @@ public class DishService {
         }
     }
 
-    public void deleteDishById(Long id) {
-        dishRepository.deleteById(id);
+    public void toggleDish(Long dishId) throws DishNotFoundException {
+        Dish dish = findById(dishId);
+        dish.setEnabled(!dish.getEnabled());
+        dishRepository.save(dish);
+    }
+
+    public void updateDish(Long dishId, DishDTO dishDTO) throws DishNotFoundException {
+        Dish dish = findById(dishId);
+        if(dishDTO.getAllowToOrder() != null) {
+            dish.setAllowToOrder(dishDTO.getAllowToOrder());
+        }
+        if(dishDTO.getCost() != null) {
+            dish.setCost(dishDTO.getCost());
+        }
+        if(dishDTO.getDescription() != null) {
+            dish.setDescription(dishDTO.getDescription());
+        }
+        if(dishDTO.getName() != null) {
+            dish.setName(dishDTO.getName());
+        }
+        if(dishDTO.getWeight() != null) {
+            dish.setWeight(dishDTO.getWeight());
+        }
+        dishRepository.save(dish);
     }
 
     public void saveImage(Long dishId, MultipartFile image) throws DishNotFoundException, IOException {
