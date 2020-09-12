@@ -73,15 +73,15 @@ function clearDishCards() {
 
 function addDishToDishCard(dish) {
     let dishCard = document.createElement('div');
-    dishCard.className = 'card';
-    dishCard.styleName = 'width: 200px';
+    dishCard.className = 'col col-xl-2 col-lg-3 col-md-6 col-sm-12 rounded';
+    dishCard.style.padding = "5px";
     dishCard.innerHTML = `
-    <img src="/menu/dishes/image/get?dishId=${dish['id']}" class="card-img-top w-100 d-block">
-    <div class="card-body d-flex flex-column">
-        <p class="card-text"><input name="name" placeholder="Название" type="text" value="${dish['name']}"><p>
-        <p class="card-text"><textarea name="description" placeholder="Описание" type="text">${dish['description']}</textarea></p>
-        <p class="card-text"><input name="weight" placeholder="Вес" type="text" value="${dish['weight']}"></p>
-        <p class="card-text"><input name="cost" placeholder="Стоимость" type="text" value="${dish['cost']}"></p>
+    <img src="/menu/dishes/image/get?dishId=${dish['id']}" style="margin-bottom: 6px; width: inherit; height: 200px;" class="img-thumbnail">
+    <div class="d-flex flex-column">
+        <input class="form-control" style="margin-bottom: 6px;" name="name" placeholder="Название" type="text" value="${dish['name']}">
+        <textarea class="form-control" style="margin-bottom: 6px;" name="description" placeholder="Описание" type="text">${dish['description']}</textarea>
+        <input class="form-control" style="margin-bottom: 6px;" name="weight" placeholder="Вес" type="text" value="${dish['weight']}">
+        <input class="form-control" style="margin-bottom: 6px;" name="cost" placeholder="Стоимость" type="text" value="${dish['cost']}">
         <button class="btn btn-secondary delete-dish" style="margin-bottom: 6px;">Удалить</button>
         <button class="btn btn-primary update-dish">Обновить</button>
     </div>
